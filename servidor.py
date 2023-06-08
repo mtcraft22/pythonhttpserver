@@ -1,9 +1,6 @@
-import socket
 
-servidor=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-servidor.bind(("localhost",8080))
+import httpclass
 
-servidor.listen(5)
 
 with open("hola.html","r") as html:
     Html=html.read()
@@ -30,9 +27,11 @@ Content-Type: {tipo}
 {Html}
         """
     except Exception:
-        respuesta="""
-HTTP/1.1 400 Bad request
+        respuesta=f"""
+HTTP/1.1 {httpclass.httpstatus[400]}
 Recurso: No encontrado o no tienes permisos
+content-type:{}
+
         """
 
     print(solicitud)
