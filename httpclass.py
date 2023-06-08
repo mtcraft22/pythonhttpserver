@@ -53,66 +53,89 @@ httpmimes={
 
 class httpmessage:
     def __init__(self) -> None:
-        self._message
-        self.status
-        self.path
-        self.start_line
-        self.headers
-        self.body
+        self._message=None
+        self.command=None
+        self.path=None
+        self.headers=None
+        self.body=None
     def send_status_code(self,code):
         self._message=f"""
 HTTP/1.1 {code}\r\n
         """
+    def send_code(self,code):
+        self._message=f"HTTP/1.1 {httpstatus[code]}\r\n"
     def send_header(self,key,value):
-        pass
+        self._message+=f"{key}:{value}\r\n"
     def send_body(self,body):
-        pass
+        self._message+=f"{body}\r\n"
     def end_header(self):
-        self._message+=" \r\n"
+        self._message+="\r\n"
 
     def Do_Options(self):
-        self.send_response(httpstatus[501])
+        self.send_code(501)
+        self.send_header("Server","Mtcraft_http_server")
+        self.end_header()
+        self.send_body("hola el metodo no lo he implementaddo")
     def Do_patch(self):
-        self.send_response(httpstatus[501])
+        self.send_code(501)
+        self.send_header("Server","Mtcraft_http_server")
+        self.end_header()
+        self.send_body("hola el metodo no lo he implementaddo")
     def Do_Put(self):
-        self.send_response(httpstatus[501])
+        self.send_code(501)
+        self.send_header("Server","Mtcraft_http_server")
+        self.end_header()
+        self.send_body("hola el metodo no lo he implementaddo")
     def Do_Trace(self):
-        self.send_response(httpstatus[501])
+        self.send_code(501)
+        self.send_header("Server","Mtcraft_http_server")
+        self.end_header()
+        self.send_body("hola el metodo no lo he implementaddo")
     def Do_get(self):
         pass
     def Do_post(self):
-        self.send_response(httpstatus[501])
+        self.send_code(501)
+        self.send_header("Server","Mtcraft_http_server")
+        self.end_header()
+        self.send_body("hola el metodo no lo he implementaddo")
     def Do_Head(self):
         pass
     def Do_connect(self):
-        self.send_response(httpstatus[501])
+        self.send_code(501)
+        self.send_header("Server","Mtcraft_http_server")
+        self.end_header()
+        self.send_body("hola el metodo no lo he implementaddo")
     def Do_delete(self):
-        self.send_response(httpstatus[501])
-
+        self.send_code(501)
+        self.send_header("Server","Mtcraft_http_server")
+        self.end_header()
+        self.send_body("hola el metodo no lo he implementaddo")
     
-    def make_response(self):
-        self._message=f"""
-HTTP/1.1 {self.status}
-{self.headers}
-
-{self.body}
-        """
-    def send_response(self, Socket):
-        self.make_response()
-        Socket.send(self._message.encode("utf-8"))
+    
     def run_forever(self):
         while True:
             enchufe, direcion = servidor.accept()
             self._message=enchufe.recv(1024).decode("utf-8")
-
-            comamd=self._message.split(" ")[0]
-
-            match comamd:
+            self.command=self._message.split(" ")[0]
+            match self.command:
                 case "CONNECT":
                     self.Do_connect()
                 case "DELETE":
                     self.Do_delete()
-                
-            
-            self.send_response()
+                case "GET":
+                    self.Do_get
+                case "HEAD":
+                    self.Do_Head()
+                case "OPTIONS":
+                    self.Do_Options()
+                case "PATCH":
+                    self.Do_patch()
+                case "POST":
+                    self.Do_post()
+                case "PUT":
+                    self.Do_Put()
+                case "TRACE":
+                    self.Do_Trace()
+            print(self._message)
+            enchufe.send(self._message.encode("utf-8"))
             enchufe.close()
