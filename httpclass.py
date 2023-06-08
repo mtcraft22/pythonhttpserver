@@ -60,13 +60,15 @@ class httpmessage:
         self.headers
         self.body
     def send_status_code(self,code):
-        pass
+        self._message=f"""
+HTTP/1.1 {code}\r\n
+        """
     def send_header(self,key,value):
         pass
     def send_body(self,body):
         pass
     def end_header(self):
-        pass
+        self._message+=" \r\n"
 
     def Do_Options(self):
         self.send_response(httpstatus[501])
