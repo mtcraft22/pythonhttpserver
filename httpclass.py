@@ -120,14 +120,17 @@ HTTP/1.1 {code}\r\n
             self.command=self._message.split(" ")[0]
             self.path=self._message.split(" ")[1]
             i=1
+            print(self._message)
+
             while self._message.splitlines()[i]!=" \r\n":
                 print(self._message.splitlines()[i])
                 try: #si no hay indice 1 al separar la cadena por los : , significa que ya no hay mas cabeceras
                     self.headers[self._message.splitlines()[i].split(":")[0]]=self._message.splitlines()[i].split(":")[1]
                 except IndexError:
-                    self.headers=None
+                    self.headers={}
+                    break
                 i += 1
-            print(self._message+"\r\n")
+         
 
             match self.command:
                 case "CONNECT":
