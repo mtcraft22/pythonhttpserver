@@ -3,7 +3,7 @@ import socket
 
 #levantamos el socket tcp para cominicanos con el navegador via http
 servidor=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-servidor.bind(("localhost",8080))
+servidor.bind(("192.168.1.46",8080))
 servidor.listen(5)
 
 # codigos de etado http 
@@ -11,6 +11,7 @@ httpstatus={
     100:"100 Continue",
     200:"200 OK",
     400:"400 Bad request",
+    404:"404 Page not found",
     500:"500 Internal server error",
     501:"501 Not implemented"
 }
@@ -56,16 +57,16 @@ class httpmessage:
         self._message=None
         self.command=None
         self.path=None
-        self.headers=None
+        self.headers={}
         self.body=None
     def send_status_code(self,code):
         self._message=f"""
 HTTP/1.1 {code}\r\n
         """
     def send_code(self,code):
-        self._message=f"HTTP/1.1 {httpstatus[code]}\r\n"
+        self._message=f"HTTP/1.1 {httpstatus[code]}\n"
     def send_header(self,key,value):
-        self._message+=f"{key}:{value}\r\n"
+        self._message+=f"{key}:{value}\n"
     def send_body(self,body):
         self._message+=f"{body}\r\n"
     def end_header(self):
@@ -117,13 +118,24 @@ HTTP/1.1 {code}\r\n
             enchufe, direcion = servidor.accept()
             self._message=enchufe.recv(1024).decode("utf-8")
             self.command=self._message.split(" ")[0]
+            self.path=self._message.split(" ")[1]
+            i=1
+            while self._message.splitlines()[i]!=" \r\n":
+                print(self._message.splitlines()[i])
+                try: #si no hay indice 1 al separar la cadena por los : , significa que ya no hay mas cabeceras
+                    self.headers[self._message.splitlines()[i].split(":")[0]]=self._message.splitlines()[i].split(":")[1]
+                except IndexError:
+                    self.headers=None
+                i += 1
+            print(self._message+"\r\n")
+
             match self.command:
                 case "CONNECT":
                     self.Do_connect()
                 case "DELETE":
                     self.Do_delete()
                 case "GET":
-                    self.Do_get
+                    self.Do_get()
                 case "HEAD":
                     self.Do_Head()
                 case "OPTIONS":
