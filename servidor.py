@@ -7,7 +7,7 @@ class api(httpmessage):
         if self.path=="/":
             self.send_code(200)
             self.send_header("Server","Mtcraft_http_server")
-            self.send_header("content-type",httpmimes["html"])
+            self.send_header("content-type",httpmimes['html'])
             self.end_header()
             with open("hola.html","r") as body:
                 Html=body.read()
@@ -17,10 +17,15 @@ class api(httpmessage):
                 self.send_code(200)
                 self.send_header("Server","Mtcraft_http_server")
                 self.send_header("content-type",httpmimes[self.path.split(".")[1]])
-                self.end_header()
-                with open(f".{self.path}","r") as body:
+                
+                with open(f".{self.path}","rb") as body:
                     Html=body.read()
-                self.send_body(Html)
+                self.send_header("content-lenght",str(len(Html)))
+                self.end_header()
+                if httpmimes[self.path.split(".")[1]].split("/")[0] in "audiovideoimage":
+                    self.send_body(Html,True)
+                else:
+                    self.send_body(Html.decode())
             except IndexError:
                 self.send_code(400)
                 self.send_header("Archivo","No lo es")
@@ -33,3 +38,4 @@ class api(httpmessage):
 
 Api=api()
 Api.run_forever()
+

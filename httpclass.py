@@ -28,6 +28,7 @@ httpmimes={
     "png":"image/png",
     "svg":"image/svg+xml",
     "ico":"image/x-incon",
+    "webp":"image/webp",
     #binary partition
     "byte_range":"multipart/byteranges",
     "formulario_multiparte":"multipart/form-data",
@@ -67,8 +68,14 @@ HTTP/1.1 {code}\r\n
         self._message=f"HTTP/1.1 {httpstatus[code]}\n"
     def send_header(self,key,value):
         self._message+=f"{key}:{value}\n"
-    def send_body(self,body):
-        self._message+=f"{body}\r\n"
+    def send_body(self,body, binari=False):
+        if binari:
+            self._message = self._message.encode()
+            self._message += body
+        else:
+            self._message +=f"{body}"
+            self._message = self._message.encode()
+      
     def end_header(self):
         self._message+="\r\n"
 
@@ -152,5 +159,9 @@ HTTP/1.1 {code}\r\n
                 case "TRACE":
                     self.Do_Trace()
             print(self._message)
-            enchufe.send(self._message.encode("utf-8"))
+            
+            try:
+                enchufe.send(self._message)
+            except TypeError:
+                enchufe.send(self._message.encode())
             enchufe.close()
