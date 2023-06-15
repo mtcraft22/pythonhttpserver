@@ -35,11 +35,8 @@ httpmimes = {
     # audio
     "waw": "audio/waw",
     "ogg": "audio/ogg",
-    "webm": "audio/webm",
     "midi": "audio/midi",
     # video
-    "webm": "video/webm",
-    "ogg": "video/ogg",
     "mp4": "video/mp4",
     # binario
     "otro": "application/octet-stream",
@@ -140,7 +137,13 @@ HTTP/1.1 {code}\r\n
 
             while self._message.splitlines()[i] != " \r\n":
                 print(self._message.splitlines()[i])
-                try:  # si no hay indice 1 al separar la cadena por los : , significa que ya no hay mas cabeceras
+                
+                """
+                    si no hay indice 1 al separar la cadena por los : , 
+                    significa que ya no hay mas cabeceras
+                """
+
+                try:  
                     self.headers[
                         self._message.splitlines()[i].split(":")[0]
                     ] = self._message.splitlines()[i].split(":")[1]

@@ -9,12 +9,25 @@
     </head>
     <body>
         <h1>bueno dia</h1>
+        <div>
+            <audio controls autoplay>
+                <source src="f.ogg" type="audio/ogg">
+            </audio>
+        </div>
+        <dialog></dialog>
         <div id="login">
-            <form>
+            <form method="post">
                 <label>Usuari:</label><br>
-                <input><br>
+                <input name="usuario"><br>
                 <label>contrasenya:</label><br>
-                <input><br>
+                <input name="contra" type="password"><br>
+                <input type="submit" name="enviado">
+                <input type="checkbox" name="seleciona">
+                <input type="checkbox" name="seleciona1">
+                <input type="checkbox" name="seleciona2">
+                <input type="radio" name="sel">
+                <input type="radio" name="sel">
+                <input type="radio" name="sel">
             </form>
         </div>
         <script src="hola.js"></script>

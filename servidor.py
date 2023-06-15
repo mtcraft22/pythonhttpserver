@@ -21,7 +21,6 @@ class api(httpclass.httpmessage):
                 self.send_header(
                     "content-type", httpclass.httpmimes[self.path.split(".")[1]]
                 )
-
                 with open(f".{self.path}", "rb") as body:
                     Html = body.read()
                 self.send_header("content-lenght", str(len(Html)))
