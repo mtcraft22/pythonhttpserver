@@ -45,6 +45,7 @@ httpmimes = {
     "xhtml": "application/xhtml+xml",
     "xml": "application/xml",
     "pdf": "application/pdf",
+    "toml":"text/toml"
 }
 
 
@@ -54,6 +55,8 @@ class httpmessage:
         self.command = None
         self.path = None
         self.headers = {}
+        self._post = {}
+        self._get = {}
         self.body = None
 
     def send_status_code(self, code):
@@ -65,8 +68,7 @@ HTTP/1.1 {code}\r\n
         self._message = f"HTTP/1.1 {httpstatus[code]}\n"
 
     def send_header(self, key, value):
-        self._message += f"{key}:{value}\n"
-
+        self._message += f"{key} : {value}\n"
     def send_body(self, body, binari=False):
         if binari:
             self._message = self._message.encode()
@@ -136,7 +138,7 @@ HTTP/1.1 {code}\r\n
             print(self._message)
 
             while self._message.splitlines()[i] != " \r\n":
-                print(self._message.splitlines()[i])
+                
                 
                 """
                     si no hay indice 1 al separar la cadena por los : , 
@@ -178,3 +180,5 @@ HTTP/1.1 {code}\r\n
             except TypeError:
                 enchufe.send(self._message.encode())
             enchufe.close()
+
+
