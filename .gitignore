@@ -1,3 +1,7 @@
-/nbproject/
-/.ropeproject/
-/__pycache__/
+nbproject/
+.ropeproject/
+test/
+__pycache__/
+.idea/
+.vscode/
+pyproject.toml
