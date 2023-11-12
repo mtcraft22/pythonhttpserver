@@ -1,11 +1,14 @@
 import socket
-
 # levantamos el socket tcp para cominicanos con el navegador via http
 servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-servidor.bind(("192.168.1.46", 8080))
+try:
+    servidor.bind(("localhost", 8081))
+    print("On port: 8081")
+except OSError:
+    servidor.bind(("localhost", 8080))
+    print("On port: 8080")
 servidor.listen(5)
-
-# codigos de etado http
+# codigos de estado http
 httpstatus = {
     100: "100 Continue",
     200: "200 OK",
@@ -45,7 +48,8 @@ httpmimes = {
     "xhtml": "application/xhtml+xml",
     "xml": "application/xml",
     "pdf": "application/pdf",
-    "toml":"text/toml"
+    "json": "application/json",
+    "toml": "text/toml"
 }
 
 
@@ -55,8 +59,8 @@ class httpmessage:
         self.command = None
         self.path = None
         self.headers = {}
-        self._post = {}
-        self._get = {}
+        self.Post = {}
+        self.Get = {}
         self.body = None
 
     def send_status_code(self, code):
@@ -69,6 +73,7 @@ HTTP/1.1 {code}\r\n
 
     def send_header(self, key, value):
         self._message += f"{key} : {value}\n"
+        
     def send_body(self, body, binari=False):
         if binari:
             self._message = self._message.encode()
@@ -133,18 +138,19 @@ HTTP/1.1 {code}\r\n
             enchufe, direcion = servidor.accept()
             self._message = enchufe.recv(1024).decode("utf-8")
             self.command = self._message.split(" ")[0]
-            self.path = self._message.split(" ")[1]
+            try:
+                self.path = self._message.split(" ")[1]
+            except IndexError as e:
+                print("No puedo manejar peticiones http sin el path")
+                break
             i = 1
             print(self._message)
 
             while self._message.splitlines()[i] != " \r\n":
-                
-                
                 """
                     si no hay indice 1 al separar la cadena por los : , 
                     significa que ya no hay mas cabeceras
                 """
-
                 try:  
                     self.headers[
                         self._message.splitlines()[i].split(":")[0]
@@ -153,7 +159,7 @@ HTTP/1.1 {code}\r\n
                     self.headers = {}
                     break
                 i += 1
-
+          
             match self.command:
                 case "CONNECT":
                     self.Do_connect()
@@ -168,7 +174,7 @@ HTTP/1.1 {code}\r\n
                 case "PATCH":
                     self.Do_patch()
                 case "POST":
-                    self.Do_post()
+                    self.Do_post()  
                 case "PUT":
                     self.Do_Put()
                 case "TRACE":
@@ -180,5 +186,3 @@ HTTP/1.1 {code}\r\n
             except TypeError:
                 enchufe.send(self._message.encode())
             enchufe.close()
-
-
