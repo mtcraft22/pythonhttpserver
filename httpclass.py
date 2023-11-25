@@ -1,17 +1,22 @@
 import socket
 # levantamos el socket tcp para cominicanos con el navegador via http
 servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+
+port = 8081
 try:
-    servidor.bind(("localhost", 8081))
-    print("On port: 8081")
+    servidor.bind(("localhost", port))
+    print(f"On port: {port}")
 except OSError:
-    servidor.bind(("localhost", 8080))
-    print("On port: 8080")
+    port = 8080
+    servidor.bind(("localhost", port))
+    print(f"On port: {port}")
 servidor.listen(5)
 # codigos de estado http
 httpstatus = {
     100: "100 Continue",
     200: "200 OK",
+    201: "201 Created",
     400: "400 Bad request",
     404: "404 Page not found",
     500: "500 Internal server error",
@@ -58,6 +63,7 @@ class httpmessage:
         self._message = None
         self.command = None
         self.path = None
+        self.sessions = {}
         self.headers = {}
         self.Post = {}
         self.Get = {}
@@ -72,15 +78,15 @@ HTTP/1.1 {code}\r\n
         self._message = f"HTTP/1.1 {httpstatus[code]}\n"
 
     def send_header(self, key, value):
-        self._message += f"{key} : {value}\n"
+        self._message += f"{key}: {value}\n"
         
     def send_body(self, body, binari=False):
         if binari:
-            self._message = self._message.encode()
+            self._message = self._message.encode("utf-8")
             self._message += body
         else:
             self._message += f"{body}"
-            self._message = self._message.encode()
+            self._message = self._message.encode("utf-8")
 
     def end_header(self):
         self._message += "\r\n"
@@ -184,5 +190,5 @@ HTTP/1.1 {code}\r\n
             try:
                 enchufe.send(self._message)
             except TypeError:
-                enchufe.send(self._message.encode())
+                enchufe.send(self._message.encode("utf-8"))
             enchufe.close()

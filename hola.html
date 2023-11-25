@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="hola.css">
-        <title>Hola</title>
-    </head>
-    <body>
-        <h1>bueno dia</h1>
-        <div>
-            <audio controls autoplay>
-                <source src="f.ogg" type="audio/ogg">
-            </audio>
-        </div>
-        <dialog></dialog>
-        <div id="login">
-            <form method="post" action="user">
-                <label>Usuari:</label><br>
-                <input name="usuario"><br>
-                <label>contrasenya:</label><br>
-                <input name="contra" type="password"><br>
-                <input type="submit" name="enviado">
-                <input type="checkbox" name="Apcepta_cokies" value="true">
-                <input type="checkbox" name="Spam" value="true">
-                <input type="checkbox" name="Vender_cosas_ilegales" value="true">
-                <input type="radio" name="sel" value="1">
-                <input type="radio" name="sel" value="2">
-                <input type="radio" name="sel" value="3">
-            </form>
-        </div>
-        <script src="hola.js"></script>
-    </body>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hola</title>
+</head>
+<body>
+<h1>bueno dia</h1>
+<dialog></dialog>
+<h1>!Inscribete¡</h1>
+<div>
+<form action="usuarios" method="post">
+<label for="">Nombre: </label><br>
+<input name="nombre" type="text"><br>
+<label for="">Apedillos: </label><br>
+<input name="apedillo" type="text"><br>
+<label for="">Contraseña</label><br>
+<input name="contra" type="password"><br>
+<label for="">Email</label><br>
+<input name="correo" type="email"><br>
+<label for="">Hombre</label><br>
+<input name="genero" value="hombre" type="radio"><br>
+<label for="">Mujer</label><br>
+<input name="genero" value="mujer" type="radio"><br>
+<label for="">Otro</label><br>
+<input name="genero" value="otro" type="radio"><br>
+<label for="">No quire dercirlo</label><br>
+<input name="genero" value="NULL" type="radio"><br>
+<input type="submit">
+</form>
+</div>
+
+</body>
 </html>

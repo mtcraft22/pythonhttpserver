@@ -1,6 +1,7 @@
 import httpclass
 import json
 import platform
+import hashlib
 
 VERSION=platform.python_version()
 
@@ -74,23 +75,62 @@ class api(httpclass.httpmessage):
                 self.send_header("Archivo", "No encontrado")
                 self.end_header()
     def Do_post(self):
-        if (self.path == "/user"):
+        try:
             valores = self._message.splitlines()[-1]
             for i in valores.split("&"):
                 self.Post[i.split("=")[0]] = i.split("=")[1]
-            self.send_code(200)
+        except  IndexError:
+            self.Post={}
+        if self.path == "/usuarios":
+            
+            self.send_code(201)
             self.send_header("Server", f"Mtcraft_http_server(python {VERSION})")
-            self.send_header("location", "/")
+            self.send_header("Location", f"http://localhost:{httpclass.port}/registrado.html")
             self.end_header()
-            with open("usuarios.json", "r+") as DB:
+            with open("inscritos.json", "r+") as DB:
                 try:
                     lista = json.loads(DB.read())
                 except json.decoder.JSONDecodeError:
-                    lista = {"usuarios": []}
-                lista["usuarios"].append(self.Post)
+                    lista = {"inscritos": []}
+                
+                self.Post["contra"] = hashlib.sha512(str(self.Post["contra"]).encode("utf-8")).hexdigest()
+                lista["inscritos"].append(self.Post)
                 DB.seek(0,0)
                 DB.write(json.dumps(lista, indent=4))
                 DB.write("\n")
+        elif self.path == "/login":
+            with open("inscritos.json", "r+") as DB:
+                try:
+                    lista = json.loads(DB.read())
+                except json.decoder.JSONDecodeError:
+                    self.send_code(400)
+                    self.send_header("Server", f"Mtcraft_http_server(python {VERSION})")
+                    self.send_header("Location", f'http://localhost:{httpclass.port}/hola.html')
+                    self.end_header()
+                    self.send_raw_body("<h1>NO AUTORIZADO </h1>")
+            with open("inscritos.json", "r+") as DB:
+                try:
+                    lista = json.loads(DB.read())
+                except json.decoder.JSONDecodeError:
+                    lista = {"inscritos": []}
+            try:
+                user = next(i for i in lista["inscritos"] if i["nombre"]==self.Post["user"])
+            except StopIteration:
+                user = "not guessed"
+
+            if user != "not guessed":
+                if user["contra"]==hashlib.sha512(str(self.Post["password"]).encode("utf-8")).hexdigest():
+                    self.send_code(200)
+                    self.send_header(
+                    "content-type", "text/html"
+                    )
+                    self.send_header("Set-cookie",f"session-id={hashlib.sha256(str(user['nombre']).encode('utf-8')).hexdigest()}")
+                    self.end_header()
+                    self.sessions[hashlib.sha256(str(user["nombre"]).encode("utf-8")).hexdigest()]=user
+                    self.send_body(f"<h1>Hola {user['nombre']}</h1>")
+
+
+
 
 Api = api()
 print("Servidor Iniciado")
