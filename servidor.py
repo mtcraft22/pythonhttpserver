@@ -42,26 +42,10 @@ class api(httpclass.httpmessage):
         
             
         if self.path == "/":
-
-    
-            
             self.send_code(200)
             self.send_header("Server", f"Mtcraft_http_server(python {VERSION})")
             self.send_header("content-type", httpclass.httpmimes["html"])
             self.end_header()
-            if "Cookie" in self.headers:
-                for cookie in self.headers["Cookie"].split(";"):
-                      
-                    if "session-id" in cookie.split("=")[0]:
-                        print("value",cookie.split("=")[1] )
-                        try:
-                            self.send_body(f"<h1>Usuario: {self.sessions[cookie.split('=')[1]]['nombre']}</h1>")
-                        except KeyError:
-                            self.send_body(f"<br>")
-
-
-
-            
             with open("hola.html", "r") as body:
                 html = body.read()
             self.send_body(html)
@@ -81,9 +65,9 @@ class api(httpclass.httpmessage):
                         if "session-id" in cookie.split("=")[0]:
                             print("value",cookie.split("=")[1] )
                             try:
-                                self.send_body(f"<h1>Usuario: {self.sessions[cookie.split('=')[1]]['nombre']}</h1>")
+                                self.send_body(f"<h1>Usuario: {self.sessions[cookie.split('=')[1]]['nombre']}</h1>".encode())
                             except KeyError:
-                                self.send_body(f"<br>")
+                                self.send_body(f"<br>".encode())
                 if (
                     httpclass.httpmimes[self.path.split(".")[1]].split("/")[0]
                     in "audiovideoimage"
