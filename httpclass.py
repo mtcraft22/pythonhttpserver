@@ -152,19 +152,17 @@ HTTP/1.1 {code}\r\n
             i = 1
             print(self._message)
 
-            while self._message.splitlines()[i] != " \r\n":
-                """
-                    si no hay indice 1 al separar la cadena por los : , 
-                    significa que ya no hay mas cabeceras
-                """
-                try:  
-                    self.headers[
-                        self._message.splitlines()[i].split(":")[0]
-                    ] = self._message.splitlines()[i].split(":")[1]
-                except IndexError:
-                    self.headers = {}
-                    break
-                i += 1
+            for line in self._message.split("\n"):
+                if ":" in line:
+                    
+
+                    value = ""
+                    
+
+                    for i in line.split(":")[1:]:
+                        value += i
+
+                    self.headers[line.split(":")[0]]= value
           
             match self.command:
                 case "CONNECT":

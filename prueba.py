@@ -1,4 +1,4 @@
-import json, hashlib
+'''import json, hashlib
 with open("inscritos.json", "r+") as DB:
     try:
         lista = json.loads(DB.read())
@@ -11,6 +11,10 @@ except StopIteration:
 
 if user != "not guessed":
     if user["contra"]==hashlib.sha512(str(ipass).encode("utf-8")).hexdigest():
-        print("Loged")
+        print("Loged")'''
+
+caca="caca:tua:5:tis"
+
+print(caca.split(":")[1:])
 
 
