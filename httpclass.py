@@ -78,7 +78,7 @@ HTTP/1.1 {code}\r\n
         self._message = f"HTTP/1.1 {httpstatus[code]}\n"
 
     def send_header(self, key, value):
-        self._message += f"{key}: {value}\n"
+        self._message += f"{key}:{value}\n"
         
     def send_body(self, body, binari=False):
         if binari:

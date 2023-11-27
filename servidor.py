@@ -98,6 +98,10 @@ class api(httpclass.httpmessage):
                 DB.seek(0,0)
                 DB.write(json.dumps(lista, indent=4))
                 DB.write("\n")
+        elif self.path == "/logout":
+            self.send_code(200)
+            self.send_header("Set-cookie","session-id=deleted;Expires=Thu, 01 Jan 1970 00:00:00 GMT")
+
         elif self.path == "/login":
             with open("inscritos.json", "r+") as DB:
                 try:
