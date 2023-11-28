@@ -81,12 +81,9 @@ HTTP/1.1 {code}\r\n
         self._message += f"{key}:{value}\n"
         
     def send_body(self, body, binari=False):
-        if binari:
-            self._message = self._message.encode("utf-8")
-            self._message += body
-        else:
-            self._message += f"{body}"
-            self._message = self._message.encode("utf-8")
+      
+        self._message += body
+
 
     def end_header(self):
         self._message += "\r\n"

@@ -1,0 +1,45 @@
+{
+    "video_games" :[
+        {"League_of_Legends":{
+            
+            "genre": "MOBA",
+            "developer": "Riot Games",
+            "description": "League of Legends (también conocido por sus siglas LoL), es un videojuego multijugador de arena de batalla en línea desarrollado y publicado por Riot Games. Inspirándose en Defense of the Ancients, un mapa personalizado para Warcraft III, los fundadores de Riot buscaron desarrollar un juego independiente del mismo género. Desde su lanzamiento en octubre de 2009, LoL ha sido un juego gratuito y se monetiza a través de la compra de elementos para la personalización de personajes.",
+            "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.V0h7BGSayuYO_ZqYuikKOwHaC9%26pid%3DApi&f=1&ipt=fe5b3b8764db98d444b2c759503f72cd75c331f163f9edc421ef36e1ce38c510&ipo=images",
+            "link": "https://www.leagueoflegends.com/es-es/"
+        }},
+        {
+            "name": "Fornite",
+            "genre": "Batte royal",
+            "developer": "Epic games",
+            "description": "Battle royal entre 100 jugadores en individual o en equipo",
+            "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.sTcPG3No2Oh21k4Vnl8dVgHaEK%26pid%3DApi&f=1&ipt=da9bb2bfec9b0d87ad17c45109d10c4f6ef781530054b13f4513e0892da374e1&ipo=images",
+            "link": "https://store.epicgames.com/es-ES/p/fortnite"
+        },
+        {
+            "name": "Mario 64",
+            "genre": "Platform",
+            "developer": "Nintendo",
+            "description": "Plataforma protraganizado por nuestro amigo exfontanero",
+            "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.mB4xfJotKCpxxBCWFDYvMgHaFL%26pid%3DApi&f=1&ipt=a8fb431ed579b0efe865472c30b8079f767ab59ce8bfddb595096d136d4d2af1&ipo=images",
+            "link": "https://www.nintendo.com/es-mx/"
+        },
+        {
+            "name": "Minecraft",
+            "genre": "Sandbox/survival",
+            "developer": "Mojang",
+            "description": "Construye, sobrebive y vive aventuras en un mundo infinito en minecraft",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXK8RZnN7JU9oN8loT0xdUVFCe54PRR4TZqw&usqp=CAU",
+            "link": "https://www.minecraft.net"
+        },
+        {
+            "name": "World of walcraft",
+            "genre": "MMORPG ",
+            "developer": "Blizzar",
+            "description": "Juego de rol massivo en linea",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/WoW_icon.svg/250px-WoW_icon.svg.png",
+            "link": "https://worldofwarcraft.blizzard.com/es-es/"
+        }
+        
+    ]
+}
