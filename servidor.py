@@ -66,11 +66,13 @@ class api(httpclass.httpmessage):
                     for cookie in self.headers["Cookie"].split(";"):
                         if "session-id" in cookie.split("=")[0]:
                             print("value",cookie.split("=")[1] )
-                            try:
-                                id =  cookie.split("=")[1]
-                                self.send_body(f"<h1>Usuario: {self.sessions[id[:-1]]['nombre']}</h1>")
-                            except KeyError:
-                                self.send_body(f"<br>")
+                            if httpclass.httpmimes[self.path.split(".")[1]]== "text/html":
+                                try:
+                                    id =  cookie.split("=")[1]
+                                    self.send_body(f"<h1>Usuario: {self.sessions[id[:-1]]['nombre']}</h1>")
+                                    self.send_body("<form id='logout' action='logout' method='post'><button type='submit'>Cerrar la sessiòn</button></form>")
+                                except KeyError:
+                                    self.send_body(f"<br>")
                 if (
                     httpclass.httpmimes[self.path.split(".")[1]].split("/")[0]
                     in "audiovideoimagefont"
@@ -89,10 +91,18 @@ class api(httpclass.httpmessage):
                 self.send_header("Archivo", "No encontrado")
                 self.end_header()
     def Do_post(self):
+        self.Post = {}
         try:
             valores = self._message.splitlines()[-1]
             for i in valores.split("&"):
-                self.Post[i.split("=")[0]] = i.split("=")[1]
+                if i.split("=")[0] in self.Post:
+                    print (type(self.Post[i.split("=")[0]]))
+                    if type(self.Post[i.split("=")[0]]) != list:
+                        self.Post[i.split("=")[0]]=list(self.Post[i.split("=")[0]])
+                    self.Post[i.split("=")[0]].append(i.split("=")[1])
+                else:
+                    self.Post[i.split("=")[0]] = i.split("=")[1]
+
         except  IndexError:
             self.Post={}
         if self.path == "/usuarios":
@@ -123,6 +133,17 @@ class api(httpclass.httpmessage):
                             
             self.send_code(200)
             self.send_header("Set-cookie",f"session-id={cookie.split('=')[1][:-1]};Expires=Thu,01 Jan 1970 00:00:00 GMT")
+            self.end_header()
+            self.send_body("""<!DOCTYPE html>
+<html lang='en'><head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Liga de juegos</title>
+    <link rel='stylesheet' href='main.css'>
+</head>""")
+            self.send_body(f"<h1> Sessión cerrada </h1>")
+            self.send_body(f"<a href='http://localhost:{httpclass.port}/liga.html'>Inicio </a>")
             
 
         elif self.path == "/login":
@@ -132,7 +153,7 @@ class api(httpclass.httpmessage):
                 except json.decoder.JSONDecodeError:
                     self.send_code(400)
                     self.send_header("Server", f"Mtcraft_http_server(python {VERSION})")
-                    self.send_header("Location", f'http://localhost:{httpclass.port}/hola.html')
+                    self.send_header("Location", f'http://localhost:{httpclass.port}/liga.html')
                     self.end_header()
                     self.send_raw_body("<h1>NO AUTORIZADO </h1>")
             with open("inscritos.json", "r+") as DB:
@@ -154,7 +175,16 @@ class api(httpclass.httpmessage):
                     self.send_header("Set-cookie",f"session-id={hashlib.sha256(str(user['nombre']).encode('utf-8')).hexdigest()}")
                     self.end_header()
                     self.sessions[hashlib.sha256(str(user["nombre"]).encode("utf-8")).hexdigest()]=user
+                    self.send_body("""<!DOCTYPE html>
+<html lang='en'><head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Liga de juegos</title>
+    <link rel='stylesheet' href='main.css'>
+</head>""")
                     self.send_body(f"<h1>Hola {user['nombre']}</h1>")
+                    self.send_body(f"<a href='http://localhost:{httpclass.port}/liga.html'>Vuelve al inicio</a>")
 
 
 

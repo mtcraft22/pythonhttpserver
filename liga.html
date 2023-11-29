@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liga de juegos</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <h1>Bienvenido a nuestra competición de vieguegos anual</h1>
+    <h1>Bienvenido/a/ a nuestra competición de videojuegos anual</h1>
     <dialog></dialog>
     <h1>¡Inscribete!</h1>
-    <div>
-        <form action="usuarios" method="post">
+    <div id="formulario">
+        <form id="registro" action="usuarios" method="post">
             <label for="">Nombre: </label><br>
             <input name="nombre" type="text"><br>
             <label for="">Apedillos: </label><br>
@@ -30,10 +31,21 @@
             <input name="genero" value="otro" type="radio"><br>
             <label for="">No quire dercirlo</label><br>
             <input name="genero" value="NULL" type="radio"><br>
-            <input type="submit">
+            
         </form>
     </div>
     <h1>Tengo cuenta</h1>
+    <div id="formulario">
+        
+        <form action="login" method="post">
+                <label for="">Nombre:</label><br>
+                <input name="user" type="text"><br>
+                <label for="">Contrasenya:</label><br>
+                <input name="password" type="password"><br>
+                <button type="submit">Login</button>
+        </form>
+    </div>
+    <a href="http://localhost:8081/main.html">Volver a la biblioteca</a>
 </body>
-
+<script src="buscajuegos.js"></script>
 </html>

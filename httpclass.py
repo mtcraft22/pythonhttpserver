@@ -86,8 +86,11 @@ HTTP/1.1 {code}\r\n
         self._message += body
         
     def send_body(self, body):
-      
-        self._message += f"{body}"
+        try:
+            self._message += f"{body}"
+        except TypeError:
+            self._message = self._message.decode()
+            self._message += f"{body}"
         self._message = self._message.encode()
 
     def end_header(self):
