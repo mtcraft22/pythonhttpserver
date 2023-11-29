@@ -1,0 +1,31 @@
+*{
+    justify-content: center;
+    justify-items: center;
+}
+ul{
+    list-style: none;
+    background-color: rgba(50, 50, 50, 0.5);
+    padding: 1%;
+    color: white;
+   
+}
+li{
+    padding: 1%;
+    display: inline;
+    margin-left: 10px;
+     
+ 
+}
+li:hover{
+    border-radius: 10px;
+    background-color: rgb(80, 74, 46);
+    cursor: pointer;
+}
+ul a{
+    text-decoration: none;
+    color: white;
+}
+.selected{ 
+    border-radius: 10px; 
+    background-color: rgb(73, 65, 30);
+}

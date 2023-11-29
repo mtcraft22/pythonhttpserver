@@ -54,7 +54,8 @@ httpmimes = {
     "xml": "application/xml",
     "pdf": "application/pdf",
     "json": "application/json",
-    "toml": "text/toml"
+    "toml": "text/toml",
+    "ttf": "font/ttf"
 }
 
 
@@ -79,11 +80,15 @@ HTTP/1.1 {code}\r\n
 
     def send_header(self, key, value):
         self._message += f"{key}:{value}\n"
-        
-    def send_body(self, body, binari=False):
-      
+    
+    def send_binary(self,body):
+        self._message = self._message.encode()
         self._message += body
-
+        
+    def send_body(self, body):
+      
+        self._message += f"{body}"
+        self._message = self._message.encode()
 
     def end_header(self):
         self._message += "\r\n"
@@ -144,8 +149,7 @@ HTTP/1.1 {code}\r\n
             try:
                 self.path = self._message.split(" ")[1]
             except IndexError as e:
-                print("No puedo manejar peticiones http sin el path")
-                break
+                self.path = ""
             i = 1
             print(self._message)
 

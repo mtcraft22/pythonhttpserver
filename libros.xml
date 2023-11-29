@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libros>
+    <libro>
+        <titulo>La Desaparición De Paco Molina</titulo>
+        <isbn>9788418851575</isbn>
+        <autor>Mariola Reque</autor>
+        <miniatura src='https://imagessl5.casadellibro.com/a/l/s7/75/9788418851575.webp'></miniatura>
+        <genero>Novela negra</genero>
+        <descripcion>En este libro se relata la desaparición de un chico de 16 años llamado Paco Molina.</descripcion>
+    </libro>
+    <libro>
+        <titulo>Un recorrido por c++.</titulo>
+        <isbn>9788441548213</isbn>
+        <autor>Bjarne Stroustrup </autor>
+        <miniatura src='https://imagessl3.casadellibro.com/a/l/s7/13/9788441548213.webp'></miniatura>
+        <genero>Programación y lenguajes</genero>
+        <descripcion>En este volumen el autor realiza un completo recorrido del lenguaje C++ moderno, desde los fundamentos hasta temas más avanzados.</descripcion>
+    </libro>
+    <libro>
+        <titulo>Curso de Programación python </titulo>
+        <isbn>9788441541160</isbn>
+        <autor>Arturo Montejo Raez</autor>
+        <miniatura src='https://imagessl0.casadellibro.com/a/l/s7/60/9788441541160.webp'></miniatura>
+        <genero>Programación y lenguajes</genero>
+        <descripcion>Tras desbancar a Java y C/C++, Python se ha convertido en el lenguaje de programación más popular de nuestros días. </descripcion>
+    </libro>
+    <libro>
+        <titulo>Diario de greg 10 vieja escula</titulo>
+        <isbn>9788427209749</isbn>
+        <autor>jeff kinney</autor>
+        <miniatura src='https://imagessl9.casadellibro.com/a/l/s7/49/9788427209749.webp'></miniatura>
+        <genero>Literatura infantil</genero>
+        <descripcion>El décimo libro del diario más tronchante y desternillante, Diario de Greg. Un auténtico fenómeno mundial.</descripcion>
+    </libro>
+    <libro>
+        <titulo>Diario de greg 4 Dias de perros</titulo>
+        <isbn>9788427200302</isbn>
+        <autor>jeff kinney</autor>
+        <miniatura src='https://imagessl2.casadellibro.com/a/l/s7/02/9788427200302.webp'></miniatura>
+        <genero>Literatura infantil</genero>
+        <descripcion>Son las vacaciones de verano, hace un tiempo fabuloso y todo el personal se lo pasa en grande al aire libre. ¿Y dónde está Greg Heffley? Encerrado en casa, con las cortinas echadas, jugando con la consola.</descripcion>
+    </libro>
+    <libro>
+        <titulo>Como evitar la proxima pandemia</titulo>
+        <isbn>9788401029608</isbn>
+        <autor>Bill Gates</autor>
+        <miniatura src='https://imagessl8.casadellibro.com/a/l/s7/08/9788401029608.webp'></miniatura>
+        <genero>Política internacional</genero>
+        <descripcion> Bill Gates cree que la respuesta es sí, y en este libro explica de un  modo claro y convincente qué deberíamos haber aprendido de la COVID-19 y  qué podemos hacer cada uno de nosotros para evitar un desastre parecido. </descripcion>
+    </libro>
+    <libro>
+        <titulo>La encrucijada mundial</titulo>
+        <isbn>9788434435834 </isbn>
+        <autor>Pedro Baños</autor>
+        <miniatura src='https://imagessl4.casadellibro.com/a/l/s7/34/9788434435834.webp'></miniatura>
+        <genero>Política internacional</genero>
+        <descripcion>Si en sus anteriores libros Pedro Baños ofrecía un lúcido análisis de las relaciones de poder, esta nueva obra no solo describe con detalle las excepcionales circunstancias que se están dando en el presente y las que padeceremos en el futuro inmediato en nuestro mundo hiperconectado, sino que va mucho más allá y propone soluciones que sirvan a todas las personas, en cualquier país, convirtiéndose en un manual práctico imprescindible.</descripcion>
+    </libro>
+    <libro>
+        <titulo>Politica para adultos</titulo>
+        <isbn>9788401028663 </isbn>
+        <autor>Mariano Rajoy</autor>
+        <miniatura src='https://imagessl3.casadellibro.com/a/l/s7/63/9788401028663.webp'></miniatura>
+        <genero>Política internacional</genero>
+        <descripcion>La política española ha sufrido una profunda transformación desde la  irrupción del 15-M, el movimiento que llenó calles y plazas de todo el  país hace diez años. Una década vertiginosa que ha dado lugar a cambios  dramáticos en nuestras sociedades, cada vez más amenazadas por el  populismo: fenómenos como Donald Trump o el Brexit suponen una seria  advertencia de los peligros que se esconden tras la sentimentalización  de los discursos, los líderes mesiánicos o el desafío a la ley.</descripcion>
+    </libro>
+    <libro>
+        <titulo>Sisè viatge al regne de la fantasia</titulo>
+        <isbn>9788499325552 </isbn>
+        <autor>Geronimo Stilton</autor>
+        <miniatura src='https://imagessl2.casadellibro.com/a/l/s7/52/9788499325552.webp'></miniatura>
+        <genero>Literatura infantil</genero>
+        <descripcion>Descobreix les noves olors màgiques!
+Un gran perill amenaça el Regne de la Fantasia... Vermellosa, la Reina de les Reines de les Bruixes i custòdia del Gran Robí de Foc, vol obtenir una altra pedra potentíssima, el Safir Blau... Si ho aconsegueix, tot el Regne caurà a les seves mans. Així s'inicia una fantàstica aventura per a Geronimo!</descripcion>
+    </libro>
+    <libro>
+        <titulo>Quita esas patas caraqueso</titulo>
+        <isbn>9788408105015</isbn>
+        <autor>Geronimo Stilton</autor>
+        <miniatura src='https://imagessl5.casadellibro.com/a/l/s7/15/9788408105015.webp'></miniatura>
+        <genero>Literatura infantil</genero>
+        <descripcion>¿Que sucede? ¿Quién corre por la ciudad haciéndose pasar por mi? ¿Quién planea echarme de El Eco de Roedor? Por mil quesos de bola, no podía ni imaginarme que... Vuelven las locas y divertidas aventuras del simpático roedor, escritor y periodista de Ratonia. </descripcion>
+    </libro>
+    <libro>
+        <titulo>Super Humor 2 Zipi Zape</titulo>
+        <isbn>mkt0007112137</isbn>
+        <autor>F. Ibañez</autor>
+        <miniatura src='https://imagessl7.casadellibro.com/a/l/s7/37/mkt0007112137.webp'></miniatura>
+        <genero>Humor</genero>
+        <descripcion>Historietas de zipi y zape</descripcion>
+    </libro>
+    <libro>
+        <titulo>Cocina facil y rico</titulo>
+        <isbn>9788408264378</isbn>
+        <autor>Karlos Arguiñano</autor>
+        <miniatura src='https://imagessl8.casadellibro.com/a/l/s7/78/9788408264378.webp'></miniatura>
+        <genero>Cocina</genero>
+        <descripcion>Casi nunca tenemos tiempo para cocinar. Pero no por ello dejamos de soñar con platos originales, que a la vez resulten apetitosos, sencillos de preparar y que, además, sean aptos para todos los gustos y bolsillos. </descripcion>
+    </libro>
+    <libro>
+        <titulo>Crimenes</titulo>
+        <isbn>9788418052781</isbn>
+        <autor>Carles Porta</autor>
+        <miniatura src='https://imagessl1.casadellibro.com/a/l/s7/81/9788418052781.webp'></miniatura>
+        <genero>Novela negra</genero>
+        <descripcion>Carles Porta probablemente sea uno de nuestros mejores periodistas, pero  sin duda se ha coronado, con sus libros, podcasts y series televisivas,  como un magistral narrador de relatos reales. </descripcion>
+    </libro>
+
+</libros>

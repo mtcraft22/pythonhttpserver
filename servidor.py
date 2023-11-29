@@ -49,7 +49,7 @@ class api(httpclass.httpmessage):
             with open("hola.html", "r") as body:
                 html = body.read()
             self.send_body(html)
-        if "/juego/" in self.path:
+        #if "/juego/" in self.path:
 
         else:
             try:
@@ -73,9 +73,9 @@ class api(httpclass.httpmessage):
                                 self.send_body(f"<br>")
                 if (
                     httpclass.httpmimes[self.path.split(".")[1]].split("/")[0]
-                    in "audiovideoimage"
+                    in "audiovideoimagefont"
                 ):
-                    self.send_body(html, True)
+                    self.send_binary(html)
                 else:
                     self.send_body(html.decode())
             except IndexError:

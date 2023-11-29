@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/gh/mtcraft22/mt-components@master/mt-horinzontal-sidebar.js"></script>
+    <link rel="stylesheet" href="main.css"> 
+    <title>Document</title>
+</head>
+<body>
+    <mt-vsiderbar items='
+            [{
+                "Tittle":"Incio", 
+                "Adr":"main.html"
+            },
+            {
+                "Tittle":"Libros", 
+                "Adr":"libros.html"
+            },
+            {
+                "Tittle":"Eventos", 
+                "Adr":"eventos.html"
+            }]' css="mtcss.css"
+        
+    ></mt-vsiderbar>
+    <h1>Eventos</h1>
+    <section id="busqueda">
+        <section><label>Fecha: </label></section>
+        <section><input id="fecha" type="date"></section>
+    </section>
+    
+    <div id="eventos"></div>
+
+</body>
+<script type="module" src="eventos.js"></script>
+</html>

@@ -1,0 +1,103 @@
+@font-face {
+    font-family: Underdog-Regular;
+    src: url("Underdog-Regular.ttf");
+}
+body{
+    background: radial-gradient(#B2875E,#91785A);
+    background-size: cover;
+
+}
+*{
+    font-family: Underdog-Regular;
+}
+#libros, #eventos{
+    background: rgba(0, 0, 0, 0);
+    display: grid;
+    grid-template: 50% /repeat(3,30%);
+    grid-gap: 2%;
+    justify-content: center;
+    justify-items: center;
+}
+
+#libros > div, #eventos > div {
+    
+    display: grid;
+    grid-template: repeat(6,10%) ;
+    grid-gap: 2%;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    text-align: center;
+    text-justify: center;
+    font-size: medium;
+}
+
+#busqueda{
+    display: grid;
+    grid-template: 24% 24% /  24% 24%  ;
+    width: auto;
+    justify-content: center;
+    justify-items: center;
+    margin-left: 35%;
+    background-color: rgb(104, 70, 46);
+    border: solid 2px rgb(97, 29, 29);
+    border-radius: 15px ;
+    width: 30%;
+    color: white;
+}
+
+#busqueda > section{
+    
+    display: inline;
+    
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    font-size: medium;
+}
+#busqueda input, #busqueda select {
+    border:solid black 2px;
+    width: 130%;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background: rgb(122, 96, 69);
+}
+
+#fecha {
+    border:solid black 2px;
+    width: 10%;
+    border-radius: 5px;
+    color: white;
+    background: rgba(104, 84, 63, 0.5);
+}
+#botenlace{
+    background-color: blue;
+  
+    text-decoration: none;
+    
+    border-radius: 15px;
+    padding: 2%;
+}
+#botenlace>a{
+    text-decoration: none;
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+
+input:focus{
+    border: none;
+}
+#inicio{
+    display: block;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+}
