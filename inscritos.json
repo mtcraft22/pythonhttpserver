@@ -1,0 +1,16 @@
+{
+    "inscritos": [
+        {
+            "nombre": "marc",
+            "apedillo": "marc",
+            "contra": "320dd13d19fe89b8c49e4942237966d218d52f0ef4710874803d1fe6b464699e9f964b83f705b13f450f6d438ffe2f4989cbcf371b19f3a47f45be0f9afbb2f1",
+            "correo": "matort535%40gmail.com",
+            "genero": "hombre",
+            "juegos": [
+                "leage_of_legends",
+                "fornite",
+                "mario_64"
+            ]
+        }
+    ]
+}
