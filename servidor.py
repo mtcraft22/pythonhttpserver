@@ -93,16 +93,22 @@ class api(httpclass.httpmessage):
     def Do_post(self):
         self.Post = {}
         try:
+            
             valores = self._message.splitlines()[-1]
             for i in valores.split("&"):
                 if i.split("=")[0] in self.Post:
                     print (type(self.Post[i.split("=")[0]]))
+                    
                     if type(self.Post[i.split("=")[0]]) != list:
+                        prev = self.Post[i.split("=")[0]]
                         self.Post[i.split("=")[0]]=list(self.Post[i.split("=")[0]])
-                    self.Post[i.split("=")[0]].append(i.split("=")[1])
+                        self.Post[i.split("=")[0]].clear()
+                        self.Post[i.split("=")[0]].append(prev)  
+                        self.Post[i.split("=")[0]].append(i.split("=")[1])
+                    else:
+                        self.Post[i.split("=")[0]].append(i.split("=")[1]) 
                 else:
                     self.Post[i.split("=")[0]] = i.split("=")[1]
-
         except  IndexError:
             self.Post={}
         if self.path == "/usuarios":
