@@ -11,6 +11,18 @@
                 "fornite",
                 "mario_64"
             ]
+        },
+        {
+            "nombre": "oscar",
+            "apedillo": "quintanilla",
+            "contra": "d9b42c0ad7f9d66a3eb71457d015a1492cda11518702e2febb3664b17e223aa3e08abd805649c2dfd196f878c96c3e7e49241b42df3f5b11c92009de6131bfee",
+            "correo": "oscarquiray%40campus.monlau.com",
+            "genero": "hombre",
+            "juegos": [
+                "mario_64",
+                "world_of_walcraft",
+                "rust"
+            ]
         }
     ]
 }

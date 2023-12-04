@@ -18,6 +18,7 @@ httpstatus = {
     200: "200 OK",
     201: "201 Created",
     400: "400 Bad request",
+    403: "403 Forbiden",
     404: "404 Page not found",
     500: "500 Internal server error",
     501: "501 Not implemented",

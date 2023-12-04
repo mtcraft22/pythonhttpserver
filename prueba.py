@@ -14,7 +14,7 @@ if user != "not guessed":
         print("Loged")'''
 
 caca="caca:tua:5:tis"
-
-print(caca.split(":")[1:])
+import platform
+print(platform.python_compiler)
 
 

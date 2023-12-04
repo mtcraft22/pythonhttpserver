@@ -34,7 +34,7 @@ class api(httpclass.httpmessage):
                 self.end_header()
             except FileNotFoundError:
                 self.send_code(404)
-                self.send_header("Server", f"Mtcraft_http_server(python {VERSION})")
+                self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
                 self.send_header("Archivo", "No encontrado")
                 self.end_header()
     def Do_get(self):
@@ -43,10 +43,10 @@ class api(httpclass.httpmessage):
             
         if self.path == "/":
             self.send_code(200)
-            self.send_header("Server", f"Mtcraft_http_server(python {VERSION})")
+            self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
             self.send_header("content-type", httpclass.httpmimes["html"])
             self.end_header()
-            with open("hola.html", "r") as body:
+            with open("main.html", "r") as body:
                 html = body.read()
             self.send_body(html)
         #if "/juego/" in self.path:
@@ -54,7 +54,7 @@ class api(httpclass.httpmessage):
         else:
             try:
                 self.send_code(200)
-                self.send_header("Server", f"Mtcraft_http_server(python {VERSION})")
+                self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
                 self.send_header(
                     "content-type", httpclass.httpmimes[self.path.split(".")[1]]
                 )
@@ -71,6 +71,7 @@ class api(httpclass.httpmessage):
                                     id =  cookie.split("=")[1]
                                     self.send_body(f"<h1>Usuario: {self.sessions[id[:-1]]['nombre']}</h1>")
                                     self.send_body("<form id='logout' action='logout' method='post'><button type='submit'>Cerrar la sessiòn</button></form>")
+                                    self.send_body("<form id='logout' action='catalogo' method='post'><button type='submit'>Ver el catalogo</button></form>")
                                 except KeyError:
                                     self.send_body(f"<br>")
                 if (
@@ -82,12 +83,12 @@ class api(httpclass.httpmessage):
                     self.send_body(html.decode())
             except IndexError:
                 self.send_code(400)
-                self.send_header("Server", f"Mtcraft_http_server(python {VERSION})")
+                self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
                 self.send_header("Archivo", "No lo es")
                 self.end_header()
             except FileNotFoundError:
                 self.send_code(404)
-                self.send_header("Server", f"Mtcraft_http_server(python {VERSION})")
+                self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
                 self.send_header("Archivo", "No encontrado")
                 self.end_header()
     def Do_post(self):
@@ -114,7 +115,7 @@ class api(httpclass.httpmessage):
         if self.path == "/usuarios":
             
             self.send_code(201)
-            self.send_header("Server", f"Mtcraft_http_server(python {VERSION})")
+            self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
             self.send_header("Location", f"http://localhost:{httpclass.port}/registrado.html")
             self.end_header()
             with open("inscritos.json", "r+") as DB:
@@ -128,6 +129,56 @@ class api(httpclass.httpmessage):
                 DB.seek(0,0)
                 DB.write(json.dumps(lista, indent=4))
                 DB.write("\n")
+        elif self.path == "/catalogo":
+            if "Cookie" in self.headers:
+                    for cookie in self.headers["Cookie"].split(";"):
+                        if "session-id" in cookie.split("=")[0]:
+                            try:
+                                user =  self.sessions[cookie.split("=")[1][:-1]]
+                            except KeyError:
+                                self.send_code(403)
+                                self.send_header("Server",f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
+                                self.end_header()
+                                self.send_body("""<!DOCTYPE html>
+<html lang='en'><head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Liga de juegos</title>
+    <link rel='stylesheet' href='main.css'>
+</head>
+<body><h1>No disponible</h1></body>
+""")
+                            games = user["juegos"]
+                            with open("juegos.json", "r+") as gamesDB:
+                                try:
+                                    GamesDB = json.loads(gamesDB.read())
+                                except json.decoder.JSONDecodeError:
+                                    GamesDB = {}
+                            for i in GamesDB["video_games"]:
+                                if (i["name"] in games):
+                                    i["subscrito"] = True
+                                else:
+                                    i["subscrito"] = False
+                            self.send_code(200)
+                            self.send_header("Server",f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
+                            self.send_header("content-type",httpclass.httpmimes["json"])
+                            self.end_header()
+                            self.send_body(GamesDB)
+
+
+            else:
+                self.send_code(403)
+                self.send_header("Server",f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
+                self.end_header()
+                self.send_body("""<!DOCTYPE html>
+<html lang='en'><head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Liga de juegos</title>
+    <link rel='stylesheet' href='main.css'>
+</head>""")
         elif self.path == "/logout":
             if "Cookie" in self.headers:
                     for cookie in self.headers["Cookie"].split(";"):
@@ -158,7 +209,7 @@ class api(httpclass.httpmessage):
                     lista = json.loads(DB.read())
                 except json.decoder.JSONDecodeError:
                     self.send_code(400)
-                    self.send_header("Server", f"Mtcraft_http_server(python {VERSION})")
+                    self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
                     self.send_header("Location", f'http://localhost:{httpclass.port}/liga.html')
                     self.end_header()
                     self.send_raw_body("<h1>NO AUTORIZADO </h1>")
