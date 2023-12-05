@@ -164,7 +164,7 @@ class api(httpclass.httpmessage):
                             self.send_header("Server",f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
                             self.send_header("content-type",httpclass.httpmimes["json"])
                             self.end_header()
-                            self.send_body(GamesDB)
+                            self.send_body(json.dumps(GamesDB, indent=4))
 
 
             else:
