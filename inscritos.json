@@ -42,6 +42,14 @@
                 "minecraft",
                 "world_of_walcraft"
             ]
+        },
+        {
+            "nombre": "eric",
+            "apedillo": "turens",
+            "contra": "7556dd30a844f3037db12ce50b8faa869d9a16a968f769c038764eb1bf304c3497237b7ba1123d8b3b5e3fa3ff8c0bd1ee9cbe4e6ece1fdf12007c5b498f41db",
+            "correo": "eric%40gmail.com",
+            "genero": "hombre",
+            "juegos": "rust"
         }
     ]
 }

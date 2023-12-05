@@ -96,20 +96,23 @@ class api(httpclass.httpmessage):
         try:
             
             valores = self._message.splitlines()[-1]
-            for i in valores.split("&"):
-                if i.split("=")[0] in self.Post:
-                    print (type(self.Post[i.split("=")[0]]))
-                    
-                    if type(self.Post[i.split("=")[0]]) != list:
-                        prev = self.Post[i.split("=")[0]]
-                        self.Post[i.split("=")[0]]=list(self.Post[i.split("=")[0]])
-                        self.Post[i.split("=")[0]].clear()
-                        self.Post[i.split("=")[0]].append(prev)  
-                        self.Post[i.split("=")[0]].append(i.split("=")[1])
+            if "&" in valores:
+                for i in valores.split("&"):
+                    if i.split("=")[0] in self.Post:
+                        print (type(self.Post[i.split("=")[0]]))
+                        
+                        if type(self.Post[i.split("=")[0]]) != list:
+                            prev = self.Post[i.split("=")[0]]
+                            self.Post[i.split("=")[0]]=list(self.Post[i.split("=")[0]])
+                            self.Post[i.split("=")[0]].clear()
+                            self.Post[i.split("=")[0]].append(prev)  
+                            self.Post[i.split("=")[0]].append(i.split("=")[1])
+                        else:
+                            self.Post[i.split("=")[0]].append(i.split("=")[1]) 
                     else:
-                        self.Post[i.split("=")[0]].append(i.split("=")[1]) 
-                else:
-                    self.Post[i.split("=")[0]] = i.split("=")[1]
+                        self.Post[i.split("=")[0]] = i.split("=")[1]
+            else:
+                self.post[valores.split("=")[0]]=valores.split("=")[1]
         except  IndexError:
             self.Post={}
         if self.path == "/usuarios":
@@ -129,6 +132,7 @@ class api(httpclass.httpmessage):
                 DB.seek(0,0)
                 DB.write(json.dumps(lista, indent=4))
                 DB.write("\n")
+       
         elif self.path == "/catalogo":
             if "Cookie" in self.headers:
                     for cookie in self.headers["Cookie"].split(";"):

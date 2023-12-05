@@ -18,10 +18,23 @@ body{
     justify-content: center;
     justify-items: center;
 }
+button{
+    border-radius: 15%;
+    border: black outset 2px;
+}
+button:active{
+    border: black inset 2px;
+}
 #sub {
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
     background-color: green;
 }
 #nosub{
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
     background-color: red;
 }
 #libros > div, #eventos > div , #juegos > div{

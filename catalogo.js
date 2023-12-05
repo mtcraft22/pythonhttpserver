@@ -24,23 +24,29 @@ fetch("/catalogo",{method: 'POST'})
         element.setAttribute("src",game.image)
         element.style.width = "60%"
         localdiv.append(element)
-
+        let form = document.createElement("form")
+        form.setAttribute("method","post")
         if (game.subscrito){
+
             element = document.createElement("button")
             element.setAttribute("id","sub")
             element.setAttribute("type","submit")
-            element.setAttribute("action","/cancelar")
+            form.setAttribute("action","/cancelar")
+            element.setAttribute("name","game")
             element.setAttribute("value",game.name)
             element.innerHTML="cancelar"
-            localdiv.append(element)
+            form.append(element)
+            localdiv.append(form)
         }else if (!game.subscrito){
+            form.setAttribute("action","/apcetar")
             element = document.createElement("button")
             element.setAttribute("id","nosub")
             element.setAttribute("type","submit")
-            element.setAttribute("action","/acetar")
+            element.setAttribute("name","game")
             element.setAttribute("value",game.name)
             element.innerHTML="subscribirse"
-            localdiv.append(element)
+            form.append(element)
+            localdiv.append(form)
         }
 
         target.append(localdiv)
