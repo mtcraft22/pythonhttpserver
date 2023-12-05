@@ -71,7 +71,7 @@ class api(httpclass.httpmessage):
                                     id =  cookie.split("=")[1]
                                     self.send_body(f"<h1>Usuario: {self.sessions[id[:-1]]['nombre']}</h1>")
                                     self.send_body("<form id='logout' action='logout' method='post'><button type='submit'>Cerrar la sessiòn</button></form>")
-                                    self.send_body("<form id='logout' action='catalogo' method='post'><button type='submit'>Ver el catalogo</button></form>")
+                                    self.send_body(f"<a href='http://localhost:{httpclass.port}/catalogo.html'><button type='submit'>Ver el catalogo</button></a>")
                                 except KeyError:
                                     self.send_body(f"<br>")
                 if (

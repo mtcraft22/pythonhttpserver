@@ -10,7 +10,7 @@ body{
 *{
     font-family: Underdog-Regular;
 }
-#libros, #eventos{
+#libros, #eventos,#juegos{
     background: rgba(0, 0, 0, 0);
     display: grid;
     grid-template: 50% /repeat(3,30%);
@@ -18,8 +18,13 @@ body{
     justify-content: center;
     justify-items: center;
 }
-
-#libros > div, #eventos > div {
+#sub {
+    background-color: green;
+}
+#nosub{
+    background-color: red;
+}
+#libros > div, #eventos > div , #juegos > div{
     
     display: grid;
     grid-template: repeat(6,10%) ;

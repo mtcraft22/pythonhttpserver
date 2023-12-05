@@ -23,6 +23,25 @@
                 "world_of_walcraft",
                 "rust"
             ]
+        },
+        {
+            "nombre": "roberto",
+            "apedillo": "manca",
+            "contra": "9f3d2d9e76ce4013d97a5f8d4fbacd4cd25649b65853fb35b0561a1b3e02c6e4a8d9fba76766f003631477c696f26e00206bcf8e6b1d051175cfffb2a9f723a7",
+            "correo": "mancar%40campus.monlau.com",
+            "genero": "NULL",
+            "juegos": "mario_64"
+        },
+        {
+            "nombre": "quim",
+            "apedillo": "pineda",
+            "contra": "d6e2071988c68fecb98ce227b5ffe34d04f6724123372d61beff5d24c268807d036efef2abbf3dc519d2010d38a49b00d4f3a81e1dd2a6c9693348e5688113b5",
+            "correo": "quimpi%40gmail.com",
+            "genero": "NULL",
+            "juegos": [
+                "minecraft",
+                "world_of_walcraft"
+            ]
         }
     ]
 }
