@@ -4,12 +4,13 @@ servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 
 port = 8081
+ip = "192.168.1.46"
 try:
-    servidor.bind(("localhost", port))
+    servidor.bind((ip, port))
     print(f"On port: {port}")
 except OSError:
     port = 8080
-    servidor.bind(("localhost", port))
+    servidor.bind((ip, port))
     print(f"On port: {port}")
 servidor.listen(5)
 # codigos de estado http

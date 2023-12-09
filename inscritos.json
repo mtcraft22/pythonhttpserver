@@ -50,6 +50,17 @@
             "correo": "eric%40gmail.com",
             "genero": "hombre",
             "juegos": "rust"
+        },
+        {
+            "nombre": "nolose",
+            "apedillo": "juan",
+            "contra": "317d31b893356364a67d04df7d95a615cc0759af09e75f96a31ef36307132288884c10a955361c9a8afd586cf2c06f43ae18a1c9cb37e6620de7fdd95d9726c1",
+            "correo": "nolose%40fake.com",
+            "genero": "mujer",
+            "juegos": [
+                "minecraft",
+                "rust"
+            ]
         }
     ]
 }

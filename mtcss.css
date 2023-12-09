@@ -1,23 +1,30 @@
 *{
     justify-content: center;
     justify-items: center;
+    margin: 0;
 }
 ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     list-style: none;
     background-color: rgba(50, 50, 50, 0.5);
-    padding: 1%;
+    justify-content: left;
     color: white;
-   
+    
+    
+    
 }
 li{
-    padding: 1%;
-    display: inline;
-    margin-left: 10px;
-     
- 
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 30px;
+    justify-items: center;
+    margin-left: 2%;
 }
 li:hover{
-    border-radius: 10px;
+    
     background-color: rgb(80, 74, 46);
     cursor: pointer;
 }
@@ -26,6 +33,6 @@ ul a{
     color: white;
 }
 .selected{ 
-    border-radius: 10px; 
+
     background-color: rgb(73, 65, 30);
 }

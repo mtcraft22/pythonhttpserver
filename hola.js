@@ -10,7 +10,7 @@ fetch("libros.xml")
     let select = document.getElementById("autor")
     let select2 = document.getElementById("genero")
     let librodiv = document.createElement("div")
-    let body = document.getElementsByTagName("div")[0]
+    let body = document.getElementById("libros")
     let html = document.createElement("h1")
     for (let libro of libros){
         let genero = libro.getElementsByTagName("genero")[0]

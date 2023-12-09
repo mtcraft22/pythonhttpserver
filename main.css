@@ -2,89 +2,96 @@
     font-family: Underdog-Regular;
     src: url("Underdog-Regular.ttf");
 }
+
+
+
 body{
     background: radial-gradient(#B2875E,#91785A);
     background-size: cover;
-
 }
 *{
     font-family: Underdog-Regular;
+    text-overflow: ellipsis;
+}
+#form-env{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: '. form .';
+    row-gap: 2%;
+}
+#formulario{
+    width: 100%;
+    background-color: #91785A;
+    border-radius: 15px;
+    padding: 1%;
+    border: #322719 solid 2px;
+    grid-area: form;
+    
+}
+.formulario{
+    align-self: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    column-gap: 2%;
+    margin: 0;
+    
+  
 }
 #libros, #eventos,#juegos{
     background: rgba(0, 0, 0, 0);
     display: grid;
-    grid-template: 50% /repeat(3,30%);
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+ 
     grid-gap: 2%;
     justify-content: center;
     justify-items: center;
+    text-align: left;
 }
-button{
-    border-radius: 15%;
-    border: black outset 2px;
-}
-button:active{
-    border: black inset 2px;
-}
+
 #sub {
+    border: 1px solid black;
     width: 100px;
     height: 30px;
     cursor: pointer;
     background-color: green;
 }
 #nosub{
+    border: 1px solid black;
     width: 100px;
     height: 30px;
     cursor: pointer;
     background-color: red;
 }
+
+
+    
+
+
 #libros > div, #eventos > div , #juegos > div{
     
     display: grid;
-    grid-template: repeat(6,10%) ;
-    grid-gap: 2%;
+    grid-template-columns: 1fr;
+ 
     justify-content: center;
     justify-items: center;
     background-color: rgba(0, 0, 0, 0);
     text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
+
     text-align: center;
     text-justify: center;
     font-size: medium;
 }
-
-#busqueda{
-    display: grid;
-    grid-template: 24% 24% /  24% 24%  ;
-    width: auto;
-    justify-content: center;
-    justify-items: center;
-    margin-left: 35%;
-    background-color: rgb(104, 70, 46);
-    border: solid 2px rgb(97, 29, 29);
-    border-radius: 15px ;
-    width: 30%;
-    color: white;
+.formulario>div>div>label{
+    
+    text-align: center;
+}
+.formulario>#formulario-1>div{
+    column-gap: 2%;
 }
 
-#busqueda > section{
-    
-    display: inline;
-    
-    background-color: rgba(0, 0, 0, 0);
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-    font-size: medium;
-}
-#busqueda input, #busqueda select {
-    border:solid black 2px;
-    width: 130%;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    background: rgb(122, 96, 69);
-}
+
+
 
 #fecha {
     border:solid black 2px;
@@ -118,4 +125,41 @@ input:focus{
     text-align: center;
     justify-content: center;
     justify-items: center;
+}
+
+@media (width > 1200px) {
+    #libros, #eventos,#juegos{
+        
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+       
+    }
+    .formulario {
+     
+        grid-template-columns: 1fr 1fr 1fr;
+        
+    }
+    
+    
+}
+.formulario >div>div{
+    display: grid;
+    grid-template-columns: minmax(25%, 1fr) 1fr;
+   
+}
+
+.formlog {
+    grid-template-columns: 1fr ;
+}
+#enter{
+    justify-self: center;
+    grid-column: 1/-1;
+    
+}
+.formlibs{
+    grid-template-columns: 1fr;
+}
+.formulario>div>div{
+    text-align: center;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
 }

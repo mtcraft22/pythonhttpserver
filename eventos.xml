@@ -35,7 +35,7 @@
         <descripcion>Compite en los juegos para ganar premios</descripcion>
         <miniatura src="https://images.emojiterra.com/google/android-nougat/512px/1f3ae.png"></miniatura>
         <fecha>2024-1-25</fecha>
-        <enlace href="http://localhost:8081/liga.html"></enlace>
+        <enlace href="liga.html"></enlace>
     </evento>
     
 </eventos>

@@ -48,8 +48,11 @@ fetch("/catalogo",{method: 'POST'})
             form.append(element)
             localdiv.append(form)
         }
+        
+
 
         target.append(localdiv)
+       
         console.log(game)
         
         

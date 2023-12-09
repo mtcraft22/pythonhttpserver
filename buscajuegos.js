@@ -1,23 +1,34 @@
 fetch("juegos.json")
 .then((data)=>data.json())
 .then(function(info){
-    let form = document.getElementById("registro")
+    let form = document.getElementsByClassName("formulario")[0]
+    let global = document.createElement("div")
     for (let game of info.video_games){
+        let divthis = document.createElement("div")
+        let label = document.createElement("label")
+        label.innerHTML = game.name + ": "
+        divthis.append(label)
         let check = document.createElement("input")
         check.setAttribute("type","checkbox")
         check.setAttribute("name","juegos")
         check.setAttribute("value",game.name)
-        let label = document.createElement("label")
-        label.innerHTML = game.name
-        form.append(label)
-        form.append(check)
-        form.append(document.createElement("br"))
+        divthis.append(check)
+       global.append(divthis)
+      
 
+        
     }
-
+    form.append(global)
+    
     let ok = document.createElement("button")
+    let diventer= document.createElement("div")
+    diventer.setAttribute("id","enter")
     ok.setAttribute("type","submit")
+    ok.setAttribute("class","enter")
     ok.innerHTML ="Registrarse"
-    form.append(ok)
+    diventer.append(ok)
+    form.append(diventer)
+    
+    
 
 })

@@ -71,7 +71,7 @@ class api(httpclass.httpmessage):
                                     id =  cookie.split("=")[1]
                                     self.send_body(f"<h1>Usuario: {self.sessions[id[:-1]]['nombre']}</h1>")
                                     self.send_body("<form id='logout' action='logout' method='post'><button type='submit'>Cerrar la sessiòn</button></form>")
-                                    self.send_body(f"<a href='http://localhost:{httpclass.port}/catalogo.html'><button type='submit'>Ver el catalogo</button></a>")
+                                    self.send_body(f"<a href='http://{httpclass.ip}:{httpclass.port}/catalogo.html'><button type='submit'>Ver el catalogo</button></a>")
                                 except KeyError:
                                     self.send_body(f"<br>")
                 if (
@@ -119,7 +119,7 @@ class api(httpclass.httpmessage):
             
             self.send_code(201)
             self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
-            self.send_header("Location", f"http://localhost:{httpclass.port}/registrado.html")
+            self.send_header("Location", f"http://{httpclass.ip}:{httpclass.port}/registrado.html")
             self.end_header()
             with open("inscritos.json", "r+") as DB:
                 try:
@@ -204,7 +204,7 @@ class api(httpclass.httpmessage):
     <link rel='stylesheet' href='main.css'>
 </head>""")
             self.send_body(f"<h1> Sessión cerrada </h1>")
-            self.send_body(f"<a href='http://localhost:{httpclass.port}/liga.html'>Inicio </a>")
+            self.send_body(f"<a href='http://{httpclass.ip}:{httpclass.port}/liga.html'>Inicio </a>")
             
 
         elif self.path == "/login":
@@ -214,7 +214,7 @@ class api(httpclass.httpmessage):
                 except json.decoder.JSONDecodeError:
                     self.send_code(400)
                     self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
-                    self.send_header("Location", f'http://localhost:{httpclass.port}/liga.html')
+                    self.send_header("Location", f'http://{httpclass.ip}:{httpclass.port}/liga.html')
                     self.end_header()
                     self.send_raw_body("<h1>NO AUTORIZADO </h1>")
             with open("inscritos.json", "r+") as DB:
@@ -245,7 +245,7 @@ class api(httpclass.httpmessage):
     <link rel='stylesheet' href='main.css'>
 </head>""")
                     self.send_body(f"<h1>Hola {user['nombre']}</h1>")
-                    self.send_body(f"<a href='http://localhost:{httpclass.port}/liga.html'>Vuelve al inicio</a>")
+                    self.send_body(f"<a href='http://{httpclass.ip}:{httpclass.port}/liga.html'>Vuelve al inicio</a>")
 
 
 
