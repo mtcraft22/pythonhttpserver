@@ -112,11 +112,10 @@ class api(httpclass.httpmessage):
                     else:
                         self.Post[i.split("=")[0]] = i.split("=")[1]
             else:
-                self.post[valores.split("=")[0]]=valores.split("=")[1]
+                self.Post[valores.split("=")[0]]=valores.split("=")[1]
         except  IndexError:
             self.Post={}
         if self.path == "/usuarios":
-            
             self.send_code(201)
             self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
             self.send_header("Location", f"http://{httpclass.ip}:{httpclass.port}/registrado.html")
@@ -129,10 +128,46 @@ class api(httpclass.httpmessage):
                 
                 self.Post["contra"] = hashlib.sha512(str(self.Post["contra"]).encode("utf-8")).hexdigest()
                 lista["inscritos"].append(self.Post)
+                DB.truncate(0)
                 DB.seek(0,0)
                 DB.write(json.dumps(lista, indent=4))
                 DB.write("\n")
-       
+        elif self.path == "/cancelar":
+            if "Cookie" in self.headers:
+                for cookie in self.headers["Cookie"].split(";"):
+                    if "session-id" in cookie.split("=")[0]:
+                        print("value",cookie.split("=")[1] )
+                        id =  cookie.split("=")[1]
+                        with open("inscritos.json","r+") as JugaroresDB:
+                            DB = json.loads(JugaroresDB.read())
+                            for i in DB["inscritos"]:
+                                if (i["nombre"] == self.sessions[id[:-1]]["nombre"]):
+                                    if (type(i["juegos"])!=list):
+                                        i["juegos"] = []
+                                        self.sessions[id[:-1]]["juegos"] = []
+                                    else:
+                                        self.sessions[id[:-1]]["juegos"].remove(self.Post["game"])
+                                        i["juegos"].remove(self.Post["game"])
+                            JugaroresDB.truncate(0)
+                            JugaroresDB.seek(0,0)
+                            JugaroresDB.write(json.dumps(DB,indent=4))
+                            JugaroresDB.write("\n")
+                        self.send_code(200)
+                        self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
+                        self.end_header()
+                        self.send_body(f"""<html lang='en'><head>
+<meta charset='UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Liga de juegos</title>
+<link rel='stylesheet' href='main.css'>
+</head>
+<html>
+<h1>Eliminado de {self.Post["game"]}</h1>
+<a href='http://{httpclass.ip}:{httpclass.port}/catalogo.html'>Ir a catalogo</a>
+</html>""")
+                                                                          
+
         elif self.path == "/catalogo":
             if "Cookie" in self.headers:
                     for cookie in self.headers["Cookie"].split(";"):
