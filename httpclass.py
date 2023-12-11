@@ -4,7 +4,7 @@ servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 
 port = 8081
-ip = "192.168.1.46"
+ip = "172.17.40.146"
 try:
     servidor.bind((ip, port))
     print(f"On port: {port}")

@@ -61,6 +61,18 @@
                 "minecraft",
                 "rust"
             ]
+        },
+        {
+            "nombre": "Juan",
+            "apedillo": "Carlos",
+            "contra": "2f0fb5f650beebc026802c8f7baf80b6b6275243a73861b073f46751491afb88ed1ce04c3d98283a0e968c08ca7b80fb710d6ec0259311090a6f1c2d500ea0b8",
+            "correo": "kk%40kk.com",
+            "genero": "otro",
+            "juegos": [
+                "leage_of_legends",
+                "mario_64",
+                "world_of_walcraft"
+            ]
         }
     ]
 }
