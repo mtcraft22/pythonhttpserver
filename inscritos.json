@@ -6,10 +6,7 @@
             "contra": "320dd13d19fe89b8c49e4942237966d218d52f0ef4710874803d1fe6b464699e9f964b83f705b13f450f6d438ffe2f4989cbcf371b19f3a47f45be0f9afbb2f1",
             "correo": "matort535%40gmail.com",
             "genero": "hombre",
-            "juegos": [
-                "leage_of_legends",
-                "mario_64"
-            ]
+            "juegos": []
         },
         {
             "nombre": "oscar",
@@ -29,7 +26,7 @@
             "contra": "9f3d2d9e76ce4013d97a5f8d4fbacd4cd25649b65853fb35b0561a1b3e02c6e4a8d9fba76766f003631477c696f26e00206bcf8e6b1d051175cfffb2a9f723a7",
             "correo": "mancar%40campus.monlau.com",
             "genero": "NULL",
-            "juegos": "mario_64"
+            "juegos": []
         },
         {
             "nombre": "quim",
@@ -48,7 +45,9 @@
             "contra": "7556dd30a844f3037db12ce50b8faa869d9a16a968f769c038764eb1bf304c3497237b7ba1123d8b3b5e3fa3ff8c0bd1ee9cbe4e6ece1fdf12007c5b498f41db",
             "correo": "eric%40gmail.com",
             "genero": "hombre",
-            "juegos": "rust"
+            "juegos": [
+                "rust"
+            ]
         },
         {
             "nombre": "nolose",

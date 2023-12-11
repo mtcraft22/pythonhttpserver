@@ -132,6 +132,48 @@ class api(httpclass.httpmessage):
                 DB.seek(0,0)
                 DB.write(json.dumps(lista, indent=4))
                 DB.write("\n")
+        elif self.path == "/apcetar":
+            if "Cookie" in self.headers:
+                for cookie in self.headers["Cookie"].split(";"):
+                    if "session-id" in cookie.split("=")[0]:
+                        print("value",cookie.split("=")[1] )
+                        id =  cookie.split("=")[1]
+                        with open("inscritos.json","r+") as JugaroresDB:
+                            DB = json.loads(JugaroresDB.read())
+                            for i in DB["inscritos"]:
+                                if (i["nombre"] == self.sessions[id[:-1]]["nombre"]):
+                                    if (type(i["juegos"])!=list):
+                                        prev = self.sessions[id[:-1]]["juegos"]
+                                        self.sessions[id[:-1]]["juegos"] = list(self.sessions[id[:-1]]["juegos"])
+                                        self.sessions[id[:-1]]["juegos"].clear()
+                                        self.sessions[id[:-1]]["juegos"].append(prev)  
+                                        self.sessions[id[:-1]]["juegos"].append(self.Post["game"])
+                                        prev = i["juegos"]
+                                        i["juegos"] = list(i["juegos"])
+                                        i["juegos"].clear()
+                                        i["juegos"].append(prev)  
+                                        i["juegos"].append(self.Post["game"])
+                                    else:
+                                        self.sessions[id[:-1]]["juegos"].append(self.Post["game"])
+                                        i["juegos"].append(self.Post["game"])
+                            JugaroresDB.truncate(0)
+                            JugaroresDB.seek(0,0)
+                            JugaroresDB.write(json.dumps(DB,indent=4))
+                            JugaroresDB.write("\n")
+                        self.send_code(200)
+                        self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
+                        self.end_header()
+                        self.send_body(f"""<html lang='en'><head>
+<meta charset='UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Liga de juegos</title>
+<link rel='stylesheet' href='main.css'>
+</head>
+<html>
+<h1>Inscrito en {self.Post["game"]}</h1>
+<a href='http://{httpclass.ip}:{httpclass.port}/catalogo.html'>Ir a catalogo</a>
+</html>""")
         elif self.path == "/cancelar":
             if "Cookie" in self.headers:
                 for cookie in self.headers["Cookie"].split(";"):
