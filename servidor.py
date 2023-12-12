@@ -49,31 +49,23 @@ class api(httpclass.httpmessage):
             with open("main.html", "r") as body:
                 html = body.read()
             self.send_body(html)
-        #if "/juego/" in self.path:
+        
+       
 
         else:
             try:
+                with open(f".{self.path}", "rb") as body:
+                    html = body.read()
                 self.send_code(200)
                 self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
                 self.send_header(
                     "content-type", httpclass.httpmimes[self.path.split(".")[1]]
                 )
-                with open(f".{self.path}", "rb") as body:
-                    html = body.read()
+                
                 self.send_header("content-Lenght", str(len(html)))
                 self.end_header()
-                if "Cookie" in self.headers:
-                    for cookie in self.headers["Cookie"].split(";"):
-                        if "session-id" in cookie.split("=")[0]:
-                            print("value",cookie.split("=")[1] )
-                            if httpclass.httpmimes[self.path.split(".")[1]]== "text/html":
-                                try:
-                                    id =  cookie.split("=")[1]
-                                    self.send_body(f"<h1>Usuario: {self.sessions[id[:-1]]['nombre']}</h1>")
-                                    self.send_body("<form id='logout' action='logout' method='post'><button type='submit'>Cerrar la sessiòn</button></form>")
-                                    self.send_body(f"<a href='http://{httpclass.ip}:{httpclass.port}/catalogo.html'><button type='submit'>Ver el catalogo</button></a>")
-                                except KeyError:
-                                    self.send_body(f"<br>")
+                
+                                    
                 if (
                     httpclass.httpmimes[self.path.split(".")[1]].split("/")[0]
                     in "audiovideoimagefont"
@@ -134,6 +126,24 @@ class api(httpclass.httpmessage):
                 DB.seek(0,0)
                 DB.write(json.dumps(lista, indent=4))
                 DB.write("\n")
+        elif self.path == "/logedinfo":
+            try:
+                for cookie in self.headers["Cookie"].split(";"):
+                    if "session-id" in cookie.split("=")[0]:
+                        print("value",cookie.split("=")[1] )
+                        id =  cookie.split("=")[1]
+                        self.send_code(200)
+                        self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
+                        self.send_header("content-type", httpclass.httpmimes['json'])
+                        self.end_header()
+                        self.sessions[id[:-1]]["loged"]=True
+                        self.send_body(json.dumps(self.sessions[id[:-1]]))
+            except KeyError:
+                self.send_code(200)
+                self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
+                self.send_header("content-type", httpclass.httpmimes['json'])
+                self.end_header()
+                self.send_body(json.dumps({"loged":False}))
         elif self.path == "/apcetar":
             if "Cookie" in self.headers:
                 for cookie in self.headers["Cookie"].split(";"):

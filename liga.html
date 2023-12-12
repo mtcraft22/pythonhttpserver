@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/gh/mtcraft22/mt-components@master/mt-horinzontal-sidebar.js"></script>
     <title>Liga de juegos</title> 
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
     <h1>Bienvenido/a/ a nuestra competición de videojuegos anual</h1>
-    <dialog></dialog>
+    <div id="bara">
+        <mt-vsiderbar items='
+            [{
+                "Tittle":"Biblioteca", 
+                "Adr":"main.html"
+            }]' css="mtcss.css"
+    ></mt-vsiderbar>
+    <div id="user"></div>
+    </div>
+    
     <h1>¡Inscribete!</h1>
     <div id="form-env">
         <div id="formulario">
@@ -49,8 +59,8 @@
             </form>
         </div>
     </div>
-    <a href="main.html">Volver a la biblioteca</a>
 </body>
 <script src="buscajuegos.js"></script>
+<script src="getloged.js"></script>
 
 </html>
