@@ -6,7 +6,12 @@
             "contra": "320dd13d19fe89b8c49e4942237966d218d52f0ef4710874803d1fe6b464699e9f964b83f705b13f450f6d438ffe2f4989cbcf371b19f3a47f45be0f9afbb2f1",
             "correo": "matort535%40gmail.com",
             "genero": "hombre",
-            "juegos": []
+            "juegos": [
+                "minecraft",
+                "leage_of_legends",
+                "fornite",
+                "mario_64"
+            ]
         },
         {
             "nombre": "oscar",
@@ -26,7 +31,9 @@
             "contra": "9f3d2d9e76ce4013d97a5f8d4fbacd4cd25649b65853fb35b0561a1b3e02c6e4a8d9fba76766f003631477c696f26e00206bcf8e6b1d051175cfffb2a9f723a7",
             "correo": "mancar%40campus.monlau.com",
             "genero": "NULL",
-            "juegos": []
+            "juegos": [
+                "mario_64"
+            ]
         },
         {
             "nombre": "quim",
@@ -69,6 +76,17 @@
             "juegos": [
                 "leage_of_legends",
                 "mario_64",
+                "world_of_walcraft",
+                "minecraft"
+            ]
+        },
+        {
+            "nombre": "sergio",
+            "apedillo": "marin",
+            "contra": "be3ab18963ce35e6eec971daebc36414b1db9ae92f708e6232aacf0675d4957060bacf37e87a8b8abb7b64afaef2ae60a7dfbaa1a262196f0a2f0d624985edf1",
+            "correo": "sergius%40marmor.com",
+            "genero": "hombre",
+            "juegos": [
                 "world_of_walcraft"
             ]
         }

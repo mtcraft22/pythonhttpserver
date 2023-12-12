@@ -127,6 +127,8 @@ class api(httpclass.httpmessage):
                     lista = {"inscritos": []}
                 
                 self.Post["contra"] = hashlib.sha512(str(self.Post["contra"]).encode("utf-8")).hexdigest()
+                if not("juegos" in self.Post):
+                    self.Post["juegos"] = [] 
                 lista["inscritos"].append(self.Post)
                 DB.truncate(0)
                 DB.seek(0,0)
