@@ -7,9 +7,11 @@
             "correo": "matort535%40gmail.com",
             "genero": "hombre",
             "juegos": [
+                "mario_64",
                 "minecraft",
+                "pyrpg",
                 "leage_of_legends",
-                "mario_64"
+                "fornite"
             ]
         },
         {
@@ -19,7 +21,6 @@
             "correo": "oscarquiray%40campus.monlau.com",
             "genero": "hombre",
             "juegos": [
-                "mario_64",
                 "world_of_walcraft",
                 "rust"
             ]
@@ -31,7 +32,9 @@
             "correo": "mancar%40campus.monlau.com",
             "genero": "NULL",
             "juegos": [
-                "mario_64"
+                "mario_64",
+                "rust",
+                "leage_of_legends"
             ]
         },
         {
@@ -72,12 +75,7 @@
             "contra": "2f0fb5f650beebc026802c8f7baf80b6b6275243a73861b073f46751491afb88ed1ce04c3d98283a0e968c08ca7b80fb710d6ec0259311090a6f1c2d500ea0b8",
             "correo": "kk%40kk.com",
             "genero": "otro",
-            "juegos": [
-                "leage_of_legends",
-                "mario_64",
-                "world_of_walcraft",
-                "minecraft"
-            ]
+            "juegos": []
         },
         {
             "nombre": "sergio",
@@ -87,6 +85,39 @@
             "genero": "hombre",
             "juegos": [
                 "world_of_walcraft",
+                "minecraft"
+            ]
+        },
+        {
+            "nombre": "annamaria",
+            "apedillo": "ruiz",
+            "contra": "e086cf2fbcba464e08fdeedce7a17d0ef5b3eb5f46aec1ada8ed30c7bdab374b9ef9b96f3fef47d470b7bb639691b7ab266aae3ccb32c8cb8ec80ce71b18119e",
+            "correo": "ana%40gmail.com",
+            "genero": "mujer",
+            "juegos": [
+                "mario_64",
+                "minecraft"
+            ]
+        },
+        {
+            "nombre": "anadelosjoses",
+            "apedillo": "josefarui",
+            "contra": "6e281e7dc77c58bbfa92e40f37ccc01994fa463b09620c5e3f38da05c565f22e552111648c52500aa60db59c48b9e2b0730b7c5beb17ea222af82751ec79a005",
+            "correo": "josefa%40fa.fa",
+            "genero": "NULL",
+            "juegos": [
+                "minecraft",
+                "mario_64"
+            ]
+        },
+        {
+            "nombre": "gregorio",
+            "apedillo": "greg",
+            "contra": "eb7b62869dfd42e28bf329061d5093f4c9e63dcd7e4e530480afd1fc7acf1bc894a723a182c4e4dd845cd7c4dc1a5f0d202a89c856450d3239cd693ae8694672",
+            "correo": "greg%40gre.greg",
+            "genero": "otro",
+            "juegos": [
+                "mario_64",
                 "minecraft"
             ]
         }

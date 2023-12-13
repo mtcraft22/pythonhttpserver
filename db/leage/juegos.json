@@ -47,6 +47,14 @@
             "description": " Los jugadores deben recoger recursos para sobrevivir y fabricar objetos dentro del juego, a excepción del equipamiento inicial con el que se empieza, que incluye una roca y una antorcha (ocasionalmente en algunos servidores, en su mayoría los modificados, se otorga equipamiento adicional como armas de fuego, ropa y suministros). Los jugadores recolectan recursos como tela, comida, madera, chatarra y piedra. que pueden ser obtenidos cortando árboles o cazando animales, saqueando monumentos entre otros métodos, Hay una lista inicial de fabricación de objetos, como armas, ropa y materiales de construcción, y a medida que se progresa en el juego se pueden conseguir planos u objetos más avanzados para construir objetos como torretas, puertas blindadas, fusiles, francotiradores, armas automáticas, lanzacohetes y C4. Estos pueden encontrarse en cajas (con forma de cubo), personajes muertos (o casi) o investigando objetos encontrados en las bases de otros jugadores",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Rust_vector_logo.svg/250px-Rust_vector_logo.svg.png",
             "link": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjjhsGiqPWCAxUDVKQEHRNjC2YQFnoECBsQAQ&url=https%3A%2F%2Fstore.steampowered.com%2Fapp%2F252490%2FRust%2F&usg=AOvVaw2LFz-apk7XNUUieFwQr1pr&opi=89978449"
+        },
+        {
+            "name": "pyrpg",
+            "genere": "estrategia por turnos",
+            "developer": "mtcraft22",
+            "description": "Combatir por turnos ",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Rust_vector_logo.svg/250px-Rust_vector_logo.svg.png",
+            "link": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjjhsGiqPWCAxUDVKQEHRNjC2YQFnoECBsQAQ&url=https%3A%2F%2Fstore.steampowered.com%2Fapp%2F252490%2FRust%2F&usg=AOvVaw2LFz-apk7XNUUieFwQr1pr&opi=89978449"
         }
     ]
 }

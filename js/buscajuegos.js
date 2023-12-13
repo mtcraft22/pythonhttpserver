@@ -1,4 +1,4 @@
-fetch("juegos.json")
+fetch("../db/leage/juegos.json")
 .then((data)=>data.json())
 .then(function(info){
     let form = document.getElementsByClassName("formulario")[0]
@@ -13,6 +13,7 @@ fetch("juegos.json")
         check.setAttribute("name","juegos")
         check.setAttribute("value",game.name)
         divthis.append(check)
+
        global.append(divthis)
       
 

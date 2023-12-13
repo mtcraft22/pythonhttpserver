@@ -1,5 +1,5 @@
 import { search, searchtex } from "./busqueda.js"
-fetch("libros.xml")
+fetch("../db/biblio/libros.xml")
 .then(ret=>ret.text())
 .then(function(data){
     let autores = []
@@ -57,9 +57,9 @@ fetch("libros.xml")
 
 
 let select = document.getElementById("autor")
-select.addEventListener("change",function(){search("libros.xml","autor",document.getElementById("libros"),"libro")})
-
+select.addEventListener("change",function(){search("../db/biblio/libros.xml","autor",document.getElementById("libros"),"libro")})
+libros.xml
 let select2 = document.getElementById("genero")
-select2.addEventListener("change",function(){search("libros.xml","genero",document.getElementById("libros"),"libro")})
+select2.addEventListener("change",function(){search("../db/biblio/libros.xml","genero",document.getElementById("libros"),"libro")})
 let titulo = document.getElementById("titulo")
-titulo.addEventListener("input",function(){searchtex("libros.xml","titulo",document.getElementById("libros"),"libro")})
+titulo.addEventListener("input",function(){searchtex("../db/biblio/libros.xml","titulo",document.getElementById("libros"),"libro")})

@@ -1,7 +1,7 @@
 import { search } from "./busqueda.js"
 
 
-fetch("eventos.xml")
+fetch("../db/biblio/eventos.xml")
 .then(ret=>ret.text())
 .then(function(data){
 
@@ -51,5 +51,5 @@ fetch("eventos.xml")
 let fechain = document.getElementById("fecha")
 fechain.addEventListener("input",function(){
 
-    search("eventos.xml","fecha",document.getElementById("eventos"),"evento")
+    search("../db/biblio/eventos.xml","fecha",document.getElementById("eventos"),"evento")
 })
