@@ -8,6 +8,8 @@
     display: grid;
     color: white;
     grid-template-columns: 75% 25%;
+   
+    
     
 }
 #bara > *:not(mt-vsiderbar){

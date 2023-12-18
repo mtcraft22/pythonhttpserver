@@ -9,7 +9,6 @@
             "juegos": [
                 "minecraft",
                 "leage_of_legends",
-                "fornite",
                 "mario_64"
             ]
         },
@@ -87,7 +86,8 @@
             "correo": "sergius%40marmor.com",
             "genero": "hombre",
             "juegos": [
-                "world_of_walcraft"
+                "world_of_walcraft",
+                "minecraft"
             ]
         }
     ]

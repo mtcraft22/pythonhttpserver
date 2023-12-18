@@ -335,6 +335,22 @@ class api(httpclass.httpmessage):
 </head>""")
                     self.send_body(f"<h1>Hola {user['nombre']}</h1>")
                     self.send_body(f"<a href='http://{httpclass.ip}:{httpclass.port}/liga.html'>Vuelve al inicio</a>")
+                else:
+                    self.send_code(403)
+                    self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
+                    self.end_header()
+                    self.send_body(f"""<html lang='en'><head>
+<meta charset='UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Liga de juegos</title>
+<link rel='stylesheet' href='main.css'>
+</head>
+<html>
+<h1>Usuario o contraseña incorrectos</h1>
+<a href='http://{httpclass.ip}:{httpclass.port}/liga.html'>Intente de nuevo</a>
+</html>""")
+
             else:
                 self.send_code(403)
                 self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
