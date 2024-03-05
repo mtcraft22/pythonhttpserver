@@ -137,7 +137,9 @@ class api(httpclass.httpmessage):
                 DB.seek(0,0)
                 DB.write(json.dumps(lista, indent=4))
                 DB.write("\n")
-                cur.execute(f"INSERT INTO (name,last_name,password,email,genere) Players VALUES ('{self.Post["nombre"]}','{self.Post["apedillo"]}','{self.Post["contra"]}','{self.Post["correo"]}','{self.Post["genero"]}')")
+            consulta = f"INSERT INTO Players (id,name,last_name,password,email,genere)  VALUES (NULL,'{self.Post['nombre']}','{self.Post['apedillo']}','{self.Post['contra']}','{self.Post['correo']}','{self.Post['genero']}')"
+            cur.execute(consulta)
+            cur.execute("COMMIT")
         elif self.path == "/logedinfo":
             try:
                 for cookie in self.headers["Cookie"].split(";"):

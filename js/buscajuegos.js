@@ -6,12 +6,12 @@ fetch("../db/leage/juegos.json")
     for (let game of info.video_games){
         let divthis = document.createElement("div")
         let label = document.createElement("label")
-        label.innerHTML = game.name + ": "
+        label.innerHTML = game.display_name + ": "
         divthis.append(label)
         let check = document.createElement("input")
         check.setAttribute("type","checkbox")
         check.setAttribute("name","juegos")
-        check.setAttribute("value",game.name)
+        check.setAttribute("value",game.display_name)
         divthis.append(check)
 
        global.append(divthis)

@@ -7,11 +7,11 @@
             "correo": "matort535%40gmail.com",
             "genero": "hombre",
             "juegos": [
-                "mario_64",
-                "minecraft",
-                "leage_of_legends",
-                "fornite",
-                "world_of_walcraft"
+                "Mario 64",
+                "Minecraft",
+                "League_of_Legends",
+                "Fornite",
+                "World_of_Warcraft"
             ]
         },
         {
@@ -21,8 +21,8 @@
             "correo": "oscarquiray%40campus.monlau.com",
             "genero": "hombre",
             "juegos": [
-                "world_of_walcraft",
-                "rust"
+                "World_of_Warcraft",
+                "Rust"
             ]
         },
         {
@@ -32,9 +32,10 @@
             "correo": "mancar%40campus.monlau.com",
             "genero": "NULL",
             "juegos": [
-                "mario_64",
-                "rust",
-                "leage_of_legends"
+                "Mario_64",
+                "Rust",
+                "Mario+64",
+                "League+of+Legends"
             ]
         },
         {
@@ -44,8 +45,8 @@
             "correo": "quimpi%40gmail.com",
             "genero": "NULL",
             "juegos": [
-                "minecraft",
-                "world_of_walcraft"
+                "Minecraft",
+                "World_of_Warcraft"
             ]
         },
         {
@@ -55,7 +56,7 @@
             "correo": "eric%40gmail.com",
             "genero": "hombre",
             "juegos": [
-                "rust"
+                "Rust"
             ]
         },
         {
@@ -65,8 +66,8 @@
             "correo": "nolose%40fake.com",
             "genero": "mujer",
             "juegos": [
-                "minecraft",
-                "rust"
+                "Minecraft",
+                "Rust"
             ]
         },
         {
@@ -84,8 +85,8 @@
             "correo": "sergius%40marmor.com",
             "genero": "hombre",
             "juegos": [
-                "world_of_walcraft",
-                "minecraft"
+                "World_of_Warcraft",
+                "Minecraft"
             ]
         },
         {
@@ -95,8 +96,8 @@
             "correo": "ana%40gmail.com",
             "genero": "mujer",
             "juegos": [
-                "mario_64",
-                "minecraft"
+                "Mario_64",
+                "Minecraft"
             ]
         },
         {
@@ -106,8 +107,8 @@
             "correo": "josefa%40fa.fa",
             "genero": "NULL",
             "juegos": [
-                "minecraft",
-                "mario_64"
+                "Minecraft",
+                "Mario_64"
             ]
         },
         {
@@ -117,8 +118,8 @@
             "correo": "greg%40gre.greg",
             "genero": "otro",
             "juegos": [
-                "mario_64",
-                "minecraft"
+                "Mario_64",
+                "Minecraft"
             ]
         },
         {
@@ -128,10 +129,90 @@
             "correo": "juan%40gmial.com",
             "genero": "NULL",
             "juegos": [
-                "fornite",
-                "mario_64",
-                "minecraft"
+                "Fornite",
+                "Mario_64",
+                "Minecraft"
             ]
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javiersalvador%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e",
+            "correo": "javsalvador%40campus.monlau.com",
+            "genero": "hombre",
+            "juegos": []
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javsalvador%40campus.monlau.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javsalvador%40campus.monlau.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javsalvador%40campus.monlau.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javsalvador%40campus.monlau.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javsalvador%40campus.monlau.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javsalvador%40campus.monlau.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "e569259fe8708a7ac61a8d517d1b6cf4a523d7f278b23c68309c09a9ef82c5dd859066f078c6e00ad0ee757e385bccc290c16d6e8eafb8213880f9adb1f5861e",
+            "correo": "javsalvador%40campus.monlau.com",
+            "genero": "hombre",
+            "juegos": []
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e",
+            "correo": "javsalvador%40campus.monlau.com",
+            "genero": "hombre",
+            "juegos": []
         }
     ]
 }

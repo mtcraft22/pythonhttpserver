@@ -12,6 +12,12 @@
     
     
 }
+mt-vsiderbar{
+    margin-top: -1%;
+    margin-right: -2%;
+    margin-left: -2%;
+
+}
 #bara > *:not(mt-vsiderbar){
     background-color: rgba(50, 50, 50, 0.5);
 }

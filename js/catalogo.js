@@ -8,7 +8,7 @@ fetch("/catalogo",{method: 'POST'})
     for (let game of data.video_games){
         let localdiv = document.createElement("div")
         let element = document.createElement("h1")
-        element.innerHTML=game.name
+        element.innerHTML=game.display_name
         localdiv.append(element)
         element = document.createElement("h2")
         element.innerHTML=game.developer
@@ -33,7 +33,7 @@ fetch("/catalogo",{method: 'POST'})
             element.setAttribute("type","submit")
             form.setAttribute("action","/cancelar")
             element.setAttribute("name","game")
-            element.setAttribute("value",game.name)
+            element.setAttribute("value",game.display_name)
             element.innerHTML="cancelar"
             form.append(element)
             localdiv.append(form)
@@ -43,7 +43,7 @@ fetch("/catalogo",{method: 'POST'})
             element.setAttribute("id","nosub")
             element.setAttribute("type","submit")
             element.setAttribute("name","game")
-            element.setAttribute("value",game.name)
+            element.setAttribute("value",game.display_name)
             element.innerHTML="subscribirse"
             form.append(element)
             localdiv.append(form)
