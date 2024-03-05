@@ -2,6 +2,10 @@ import httpclass
 import json
 import platform
 import hashlib
+import sqlite3
+
+con = sqlite3.connect("../db/Rockandplaydb.db")
+cur = con.cursor()
 
 VERSION=platform.python_version()
 
@@ -118,6 +122,7 @@ class api(httpclass.httpmessage):
             self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
             self.send_header("Location", f"http://{httpclass.ip}:{httpclass.port}/registrado.html")
             self.end_header()
+
             with open("./../db/leage/inscritos.json", "r+") as DB:
                 try:
                     lista = json.loads(DB.read())
@@ -132,6 +137,7 @@ class api(httpclass.httpmessage):
                 DB.seek(0,0)
                 DB.write(json.dumps(lista, indent=4))
                 DB.write("\n")
+                cur.execute(f"INSERT INTO (name,last_name,password,email,genere) Players VALUES ('{self.Post["nombre"]}','{self.Post["apedillo"]}','{self.Post["contra"]}','{self.Post["correo"]}','{self.Post["genero"]}')")
         elif self.path == "/logedinfo":
             try:
                 for cookie in self.headers["Cookie"].split(";"):
