@@ -9,9 +9,9 @@
             "juegos": [
                 "mario_64",
                 "minecraft",
-                "pyrpg",
                 "leage_of_legends",
-                "fornite"
+                "fornite",
+                "world_of_walcraft"
             ]
         },
         {
@@ -117,6 +117,18 @@
             "correo": "greg%40gre.greg",
             "genero": "otro",
             "juegos": [
+                "mario_64",
+                "minecraft"
+            ]
+        },
+        {
+            "nombre": "Juancarlos",
+            "apedillo": "bueno",
+            "contra": "48734afbcca6b12e33c30b7ba96d79c3b81a01a43178e7badbd8b55a01230c4462c4e68ca3fdd7b99aa5d8b60f8093d96ac8e775ad34c8f3b8f69f2e9ed7e816",
+            "correo": "juan%40gmial.com",
+            "genero": "NULL",
+            "juegos": [
+                "fornite",
                 "mario_64",
                 "minecraft"
             ]
