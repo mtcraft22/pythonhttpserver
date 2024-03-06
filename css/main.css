@@ -1,5 +1,5 @@
 @font-face {
-    font-family: Underdog-Regular;
+	font-family: Helvetica, Arial, sans-serif;
     src: url("../fonts/Underdog-Regular.ttf");
 }
 
@@ -7,26 +7,26 @@
 #bara{
     display: grid;
     color: white;
-    grid-template-columns: 75% 25%;
-   
-    
-    
+    grid-template-columns: 75% 25%; 
 }
-mt-vsiderbar{
-    margin-top: -1%;
+
+#bara{
+    margin-top: -2%;
     margin-right: -2%;
     margin-left: -2%;
 
 }
 #bara > *:not(mt-vsiderbar){
-    background-color: rgba(50, 50, 50, 0.5);
+    background-color: #051648;
+    padding-top: 6%;
+    padding-right: 5%;
 }
 body{
-    background-color: #91785A;
+    background-color: #213D8F  ;
     background-size: cover;
 }
 *{
-    font-family: Underdog-Regular;
+	font-family: Helvetica, Arial, sans-serif;
     text-overflow: ellipsis;
 }
 #form-env{

@@ -86,7 +86,8 @@
             "genero": "hombre",
             "juegos": [
                 "World_of_Warcraft",
-                "Minecraft"
+                "Minecraft",
+                "Fortnite"
             ]
         },
         {
@@ -213,6 +214,185 @@
             "correo": "javsalvador%40campus.monlau.com",
             "genero": "hombre",
             "juegos": []
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Lopez",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "lopez",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "marc",
+            "apedillo": "salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "lopez",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Lopez",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Lopez",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "Lopez",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javi%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "lopez",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javilopez%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "Javier",
+            "apedillo": "salvador",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "javilopez%40gmail.com",
+            "genero": "hombre",
+            "juegos": "Mario+64"
+        },
+        {
+            "nombre": "quim",
+            "apedillo": "pineda",
+            "contra": "d4ea931bc2ad77ecd664de512a5c9739545e092b000cbc3c8e1dd2f27ff255e468aaf7150f1cc047a3c36c42050e3dd2a9afdca644a06b7aa9dafbd56c0a617e",
+            "correo": "quim%40gmail.com",
+            "genero": "hombre",
+            "juegos": [
+                "League+of+Legends",
+                "Minecraft"
+            ]
         }
     ]
 }

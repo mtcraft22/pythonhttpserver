@@ -6,11 +6,11 @@
             "genere": "MOBA",
             "developer": "Riot Games",
             "description": "League of Legends (también conocido por sus siglas LoL), es un videojuego multijugador de arena de batalla en línea desarrollado y publicado por Riot Games. Inspirándose en Defense of the Ancients, un mapa personalizado para Warcraft III, los fundadores de Riot buscaron desarrollar un juego independiente del mismo género. Desde su lanzamiento en octubre de 2009, LoL ha sido un juego gratuito y se monetiza a través de la compra de elementos para la personalización de personajes.",
-            "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.V0h7BGSayuYO_ZqYuikKOwHaC9%26pid%3DApi&f=1&ipt=fe5b3b8764db98d444b2c759503f72cd75c331f163f9edc421ef36e1ce38c510&ipo=images",
+            "image": "../../../media/Logo-LOL-sinFondo.png",
             "link": "https://www.leagueoflegends.com/es-es/"
         },
         {
-            "name": "Fornite",
+            "name": "Fortnite",
             "display_name":"Fortnite",
             "genere": "Battle royale",
             "developer": "Epic games",

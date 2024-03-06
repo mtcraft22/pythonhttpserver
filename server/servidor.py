@@ -137,7 +137,7 @@ class api(httpclass.httpmessage):
                 DB.seek(0,0)
                 DB.write(json.dumps(lista, indent=4))
                 DB.write("\n")
-            consulta = f"INSERT INTO Players (id,name,last_name,password,email,genere)  VALUES (NULL,'{self.Post['nombre']}','{self.Post['apedillo']}','{self.Post['contra']}','{self.Post['correo']}','{self.Post['genero']}')"
+            consulta = f"INSERT INTO Players (id,name,last_name,password,email,genere) VALUES (NULL,'{self.Post['nombre'].lower()}','{self.Post['apedillo'].lower()}','{self.Post['contra']}','{self.Post['correo'].lower()}','{self.Post['genero'].lower()}')"
             cur.execute(consulta)
             cur.execute("COMMIT")
         elif self.path == "/logedinfo":
