@@ -34,6 +34,7 @@ httpmimes = {
     "html": "text/html",
     "css": "text/css",
     # images formts
+    "jpg": "image/jpg",
     "jpeg": "image/jpeg",
     "gif": "image/gif",
     "png": "image/png",

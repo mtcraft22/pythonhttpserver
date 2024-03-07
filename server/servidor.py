@@ -117,29 +117,68 @@ class api(httpclass.httpmessage):
                 self.Post[valores.split("=")[0]]=valores.split("=")[1]
         except  IndexError:
             self.Post={}
-        if self.path == "/usuarios":
-            self.send_code(201)
-            self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
-            self.send_header("Location", f"http://{httpclass.ip}:{httpclass.port}/registrado.html")
-            self.end_header()
-
-            with open("./../db/leage/inscritos.json", "r+") as DB:
+        if self.path == "/usuarios": #alta de un usuario
+            self.Post["contra"] = hashlib.sha512(str(self.Post["contra"]).encode("utf-8")).hexdigest()
+            try:
+                consulta = f"INSERT INTO Players (id,name,last_name,password,email,genere) VALUES (NULL,'{self.Post['nombre'].lower()}','{self.Post['apedillo'].lower()}','{self.Post['contra']}','{self.Post['correo'].lower()}','{self.Post['genero'].lower()}')"
+                cur.execute(consulta)
+                cur.execute("COMMIT")
+                Player_id_cur = cur.execute(f"Select id from Players where name= '{self.Post['nombre'].lower()}'")
+                for i in Player_id_cur:
+                    Player_id = i[0]
                 try:
-                    lista = json.loads(DB.read())
-                except json.decoder.JSONDecodeError:
-                    lista = {"inscritos": []}
+                    if type(self.Post["juegos"]) == list:
+                        for i in self.Post["juegos"]:
+                            a = i.replace("+"," ")
+                            
+                            juego_id_cur = cur.execute(f"SELECT id from Games where name='{a}'")
+                            for j in juego_id_cur:
+                                
+                                cur.execute(f"insert into Games_Players (id_Game,id_player) values ({int(j[0])},{int(Player_id)})")
+                                cur.execute("commit")
+                    else:
+                        
+                        a = self.Post["juegos"].replace("+"," ")
+                        
                 
-                self.Post["contra"] = hashlib.sha512(str(self.Post["contra"]).encode("utf-8")).hexdigest()
-                if not("juegos" in self.Post):
-                    self.Post["juegos"] = [] 
-                lista["inscritos"].append(self.Post)
-                DB.truncate(0)
-                DB.seek(0,0)
-                DB.write(json.dumps(lista, indent=4))
-                DB.write("\n")
-            consulta = f"INSERT INTO Players (id,name,last_name,password,email,genere) VALUES (NULL,'{self.Post['nombre'].lower()}','{self.Post['apedillo'].lower()}','{self.Post['contra']}','{self.Post['correo'].lower()}','{self.Post['genero'].lower()}')"
-            cur.execute(consulta)
-            cur.execute("COMMIT")
+                        juego_id_cur = cur.execute(f"SELECT id from Games where name='{a}'")
+                        for j in juego_id_cur:
+                            
+                            cur.execute(f"insert into Games_Players (id_Game,id_player) values ({int(j[0])},{int(Player_id)})")
+                            cur.execute("commit")
+                except KeyError:
+                    pass #no insertamos nigún juego
+                self.send_code(200)
+                self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
+                self.send_header("Location", f"http://{httpclass.ip}:{httpclass.port}/registrado.html")
+                self.end_header()
+                self.send_body(f"""<html lang='en'><head>
+<meta charset='UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Usuario creado</title>
+<link rel='stylesheet' href='/css/main.css'>
+</head>
+<html>
+<h1>Usuario creado</h1>
+<a href='http://{httpclass.ip}:{httpclass.port}/catalogo.html'>Visite su catalogo.</a>
+</html>""")
+            except sqlite3.IntegrityError:
+                self.send_code(200)
+                self.send_header("Server", f"Mtcraft_http_server(Python {VERSION} on {platform.system()})")
+                self.send_header("Location", f"http://{httpclass.ip}:{httpclass.port}/registrado.html")
+                self.end_header()
+                self.send_body(f"""<html lang='en'><head>
+<meta charset='UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Error de vadilación</title>
+<link rel='stylesheet' href='/css/main.css'>
+</head>
+<html>
+<h1>Usuario o correo duplicado, intente de nuevo.</h1>
+<a href='http://{httpclass.ip}:{httpclass.port}/liga.html'>Registro</a>
+</html>""")
         elif self.path == "/logedinfo":
             try:
                 for cookie in self.headers["Cookie"].split(";"):
@@ -158,6 +197,7 @@ class api(httpclass.httpmessage):
                 self.send_header("content-type", httpclass.httpmimes['json'])
                 self.end_header()
                 self.send_body(json.dumps({"loged":False}))
+        
         elif self.path == "/apcetar":
             if "Cookie" in self.headers:
                 for cookie in self.headers["Cookie"].split(";"):
@@ -179,6 +219,8 @@ class api(httpclass.httpmessage):
                                         i["juegos"].clear()
                                         i["juegos"].append(prev)  
                                         i["juegos"].append(self.Post["game"])
+
+                                    
                                     else:
                                         self.sessions[id[:-1]]["juegos"].append(self.Post["game"])
                                         i["juegos"].append(self.Post["game"])

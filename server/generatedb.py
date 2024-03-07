@@ -1,13 +1,15 @@
 import sqlite3
 
 con = sqlite3.connect("../db/Rockandplaydb.db")
-cur = con.execute("""
+cur  = con.cursor()
 
-
+cur.execute('pragma encoding=UTF16')
+cur.execute("""
 CREATE TABLE Games
 (
   id integer NOT NULL,
   name TEXT,
+  developer TEXT,
   genere TEXT,
   description TEXT,
   image TEXT,
@@ -15,7 +17,7 @@ CREATE TABLE Games
   CONSTRAINT PK_Games PRIMARY KEY (id)
 );
 """)
-cur = con.execute("""
+cur.execute("""
 CREATE TABLE Players
 (
   id integer NOT NULL,
@@ -30,19 +32,13 @@ CREATE TABLE Players
   CONSTRAINT UK_uniquePlayersemail unique (email)         
 );
 """)
-cur = con.execute("""
-
-
-
+cur.execute("""
 CREATE TABLE Games_Players
 (
   id_Game integer NOT NULL,
   id_player integer NOT NULL,
-  name TEXT NOT NULL,
-  last_name TEXT NOT NULL,
-  CONSTRAINT PK_Games_Players PRIMARY KEY (id_Game,id_player,name,last_name),
+  CONSTRAINT PK_Games_Players PRIMARY KEY (id_Game,id_player),
   CONSTRAINT Games_Players FOREIGN KEY (id_Game) REFERENCES Games (id),
   CONSTRAINT Players_Games FOREIGN KEY (id_player) REFERENCES Players (id)
 );
-
 """)
